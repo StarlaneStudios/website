@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
+import { tm } from "../utils/tailwind";
 
 interface Props {
 	post: CollectionEntry<"blog">;
@@ -8,7 +9,16 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const isArchived = true;
 ---
 
-<h1 class="text-2xl font-bold text-midnight">{post.data.title}</h1>
+<h1
+	class={tm(
+		"text-2xl font-bold text-midnight bg-gray-200",
+		isArchived && "bg-red-700",
+	)}
+>
+	{post.data.title}
+</h1>
 <Content />

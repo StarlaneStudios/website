@@ -13,7 +13,8 @@
 		"quality:apply:unsafe": "biome check . --apply-unsafe"
 	},
 	"dependencies": {
-		"astro": "^5.2.5"
+		"astro": "^5.2.5",
+		"tailwind-merge": "^3.0.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
