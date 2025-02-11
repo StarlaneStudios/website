@@ -1,15 +1,21 @@
 {
-  "name": "starlane-website-2025",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-	"sync": "astro sync"
-  },
-  "dependencies": {
-    "astro": "^5.2.5"
-  }
+	"name": "starlane-website-2025",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"sync": "astro sync",
+		"quality:check": "biome check .",
+		"quality:apply": "biome check . --apply",
+		"quality:apply:unsafe": "biome check . --apply-unsafe"
+	},
+	"dependencies": {
+		"astro": "^5.2.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
 }
