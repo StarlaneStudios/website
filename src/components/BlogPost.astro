@@ -10,5 +10,5 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<h1>{post.data.title}</h1>
+<h1 class="text-2xl font-bold text-midnight">{post.data.title}</h1>
 <Content />

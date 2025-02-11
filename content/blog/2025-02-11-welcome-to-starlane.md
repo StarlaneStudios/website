@@ -6,3 +6,5 @@ authors:
 ---
 
 Our first blog
+
+<div class="text-purple-600">Hi!</div>
