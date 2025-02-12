@@ -13,12 +13,14 @@
 		"quality:apply:unsafe": "biome check . --apply-unsafe"
 	},
 	"dependencies": {
+		"@astrojs/mdx": "^4.0.8",
 		"astro": "^5.2.5",
 		"tailwind-merge": "^3.0.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@tailwindcss/vite": "^4.0.6",
+		"@types/node": "^22.13.1",
 		"sass": "^1.84.0",
 		"tailwindcss": "^4.0.6"
 	}
