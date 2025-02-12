@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "Start development watcher",
+			"detail": "run dev",
+			"group": "build",
+			"icon": {
+				"id": "wrench"
+			},
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"label": "Build production dist",
+			"detail": "run build",
+			"group": "build",
+			"icon": {
+				"id": "tools"
+			},
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"type": "npm",
+			"script": "snyc",
+			"problemMatcher": [],
+			"label": "Astro Sync",
+			"detail": "sync astro files",
+			"group": "build",
+			"icon": {
+				"id": "sync"
+			},
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"type": "npm",
+			"script": "quality:check",
+			"label": "Biome Check",
+			"detail": "Run the Biome checker",
+			"icon": {
+				"id": "wand"
+			}
+		},
+		{
+			"type": "npm",
+			"script": "quality:apply",
+			"label": "Biome Apply",
+			"detail": "Apply biome changes",
+			"icon": {
+				"id": "zap"
+			}
+		}
+	]
+}
