@@ -1,0 +1,16 @@
+.description b {
+	font-weight: 600;
+}
+
+.expertise-icon {
+	pointer-events: none;
+}
+
+.image {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-select: none;
+	pointer-events: none;
+}

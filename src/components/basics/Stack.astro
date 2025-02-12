@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes, HTMLTag } from "astro/types";
+import Element from "./Element.astro";
+
+interface Props extends HTMLAttributes<"div"> {
+	as?: HTMLTag;
+}
+
+const { ...rest } = Astro.props;
+---
+
+<Element class:list="stack" {...rest}>
+	<slot />
+</Element>
+
+<style is:global>
+	.stack {
+		@apply relative grid w-full auto-cols-fr items-start;
+	}
+</style>

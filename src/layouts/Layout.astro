@@ -1,18 +1,44 @@
 ---
 import "../styles/global.css";
+import Container from "../components/basics/Container.astro";
+
+interface Props {
+	title?: string;
+}
+
+const title = Astro.props.title ? Astro.props.title + " - Starlane Studios" : "Starlane Studios";
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#26205C" />
+		<meta name="description" content="We are group of passionate developers, artists and gamers who strive to create high quality games and software for all to enjoy." />
+
+		<link href="/sitemap.xml" rel="sitemap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+
+		<title>{title}</title>
+
+		<meta name="description" content="Starlane Studios" />
+		<meta name="twitter:card" content="content" />
+		<meta name="twitter:title" content="Starlane Studios" />
+		<meta name="twitter:image" content="/favicon.ico" />
+		<meta name="og:title" content="Starlane Studios" />
+		<meta name="og:type" content="website" />
+		<meta name="og:image" content="/favicon.ico" />
+
+		<meta content="Starlane Studios" name="og:site_name" property="og:site_name" />
+		<meta content="@StarlaneStudios" name="twitter:site" property="twitter:site" />
+		<meta content="starlane.studio" name="twitter:domain" property="twitter:domain" />
 	</head>
 	<body>
-		<slot />
+		<Container>
+			<slot />
+		</Container>
 	</body>
 </html>
 

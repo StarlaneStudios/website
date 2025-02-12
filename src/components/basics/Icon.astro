@@ -1,0 +1,82 @@
+---
+const FONT_SIZES = {
+	xs: 0.5,
+	sm: 0.75,
+	md: 1,
+	lg: 1.25,
+	xl: 1.5,
+};
+
+// Define props interface
+interface IconProps {
+	size?: "xs" | "sm" | "md" | "lg" | "xl" | number;
+	color?: string;
+	gradient?: {
+		angle: number;
+		stops: { color: string; offset: string }[];
+	};
+	left?: boolean;
+	right?: boolean;
+	noStroke?: boolean;
+	path: string;
+}
+
+const getIconSize = (size: IconProps["size"]) => {
+	if (size === undefined) {
+		return 1;
+	} else if (typeof size === "number") {
+		return size;
+	} else {
+		return FONT_SIZES[size] || 1;
+	}
+};
+---
+
+<!-- Icon component -->
+<svg
+	class="icon-path"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 24 24"
+	role="presentation"
+	style={{
+		width: `${getIconSize(Astro.props.size) * 1.5}em`,
+		height: `${getIconSize(Astro.props.size) * 1.5}em`,
+		verticalAlign: "middle",
+		marginLeft: Astro.props.left ? "0.5em" : undefined,
+		marginRight: Astro.props.right ? "0.5em" : undefined,
+		color: Astro.props.color || undefined,
+		fill: Astro.props.gradient
+			? `url(#${Math.random().toString(36).substr(2, 9)})`
+			: "currentColor",
+		stroke: Astro.props.noStroke ? "none" : "currentColor",
+		strokeWidth: Astro.props.noStroke ? 0 : 0.5
+	}}
+	{...Astro.props}
+>
+	{
+		Astro.props.gradient && (
+			<defs>
+				<linearGradient
+					id={`gradient_${Math.random().toString(36).substr(2, 9)}`}
+					gradientTransform={`rotate(${Astro.props.gradient.angle})`}
+				>
+					{Astro.props.gradient.stops.map(
+						(
+							stop: {
+								offset: string | number | null | undefined;
+								color: any;
+							},
+							index: any,
+						) => (
+							<stop
+								offset={stop.offset}
+								stop-color={stop.color}
+							/>
+						),
+					)}
+				</linearGradient>
+			</defs>
+		)
+	}
+	<path d={Astro.props.path}></path>
+</svg>

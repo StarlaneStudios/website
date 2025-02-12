@@ -1,7 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-	--color-midnight: #121063;
-	--color-tahiti: #3ab7bf;
-	--color-bermuda: #78dcca;
+	--color-dark-0: #ebecf3;
+	--color-dark-1: #d3d5e4;
+	--color-dark-2: #adb2cc;
+	--color-dark-3: #8089b0;
+	--color-dark-4: #606a97;
+	--color-dark-5: #4c537d;
+	--color-dark-6: #3e4466;
+	--color-dark-7: #363b56;
+	--color-dark-8: #212437;
+	--color-dark-9: #161721;
+
+	--color-deepblue-0: #edebff;
+	--color-deepblue-1: #cac6ed;
+	--color-deepblue-2: #a7a0de;
+	--color-deepblue-3: #837bd0;
+	--color-deepblue-4: #6155c2;
+	--color-deepblue-5: #473ba8;
+	--color-deepblue-6: #372e83;
+	--color-deepblue-7: #26205c;
+	--color-deepblue-8: #16143b;
+	--color-deepblue-9: #080619;
+
+	--color-gravel-0: #f0f0fd;
+	--color-gravel-1: #d5d5e1;
+	--color-gravel-2: #b8bac7;
+	--color-gravel-3: #9496A9;
+	--color-gravel-4: #808298;
+	--color-gravel-5: #66697e;
+	--color-gravel-6: #505163;
+	--color-gravel-7: #393a48;
+	--color-gravel-8: #21232d;
+	--color-gravel-9: #060c16;
+
+	--starlane-gradient: linear-gradient(45deg, #e25bff, #347cf5);
+
+	--font-size-xs: 12rem;
+	--font-size-sm: 13rem;
+	--font-size-md: 14rem;
+	--font-size-lg: 16rem;
+	--font-size-xl: 18rem;
+}
+
+p {
+	color: var(--color-gravel-2)
+}
+
+html {
+	font-family: "Montserrat", sans-serif;
+	background-color: var(--color-dark-9);
+	color: white;
 }

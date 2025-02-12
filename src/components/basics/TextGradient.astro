@@ -1,0 +1,7 @@
+---
+const { deg = 90, c1, c2 } = Astro.props;
+---
+
+<span style=`background: linear-gradient(${deg}deg, ${c1}, ${c2}); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`>
+	<slot />
+</span>

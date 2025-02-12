@@ -1,24 +1,31 @@
 ---
-import { getCollection } from "astro:content";
-import BlogPost from "../components/BlogPost.astro";
+import TextGradient from "../components/basics/TextGradient.astro";
+import Title from "../components/basics/Title.astro";
+import Stack from "../components/basics/Stack.astro";
 import Layout from "../layouts/Layout.astro";
+import Group from "../components/basics/Group.astro";
 
-const posts = await getCollection("blog");
+import "../styles/home.css";
+
 ---
 
 <Layout>
-	<section>
-		<h2>Latest Posts</h2>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<BlogPost post={post} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	<Stack class="max-w-[540px] py-[50px]">
+		<Title>
+			Turning 
+			<TextGradient c1="#F149B7" c2="#815eff">
+				Dreams
+			</TextGradient>
+			into 
+			<TextGradient c1="#01cbf3" c2="#3d73d6">
+				Reality
+			</TextGradient>
+		</Title>
 
-	<a href="/about">View about us</a>
+		<p class="description mt-[20px]">We are a group of passionate developers, artists and gamers who strive to create high quality <b>games</b> and <b>software</b> for all to enjoy.</p>
+
+		<Group>
+
+		</Group>
+	</Stack>
 </Layout>

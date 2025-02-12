@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import BlogPost from "../components/BlogPost.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
+import BlogPost from "../../components/BlogPost.astro";
 
 const posts = await getCollection("blog");
 ---
@@ -20,5 +20,4 @@ const posts = await getCollection("blog");
 		</ul>
 	</section>
 
-	<a href="/">View home</a>
 </Layout>
