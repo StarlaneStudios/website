@@ -1,0 +1,52 @@
+---
+import { tm } from "../../utils/tailwind";
+import { mdiArrowRight } from "@mdi/js";
+
+import Icon from "../basics/Icon.astro";
+import Button from "../basics/Button.astro";
+
+interface Props {
+	reverse?: boolean;
+	name: string;
+	title: string;
+	description: string;
+	image: string;
+	link?: string;
+	classes?: {
+		name?: string;
+		title?: string;
+		description?: string;
+		image?: string;
+		button?: string;
+	}
+}
+
+const {
+	reverse,
+	name,
+	title,
+	description,
+	image,
+	link,
+	classes,
+	...rest
+} = Astro.props;
+---
+<div class="grid grid-cols-2 gap-7 mt-8" {...rest}>
+	<div style={{ order: reverse ? 1 : undefined }}>
+		<h2 class={tm("my-2 font-bold", classes?.name)}>{name}</h2>
+		<h1 class={tm("font-bold text-[26px] text-gravel-1", classes?.title)}>{title}</h1>
+		<p class={tm("mt-2 text-[14px]", classes?.description)}>{description}</p>
+	
+		<Button size="md" class="mt-6 py-[8px]">
+			<div class="flex gap-2">
+				LEARN MORE
+				<Icon path={mdiArrowRight} size="md" />
+			</div>
+		</Button>
+	</div>
+	
+	<div class="px-5">
+		<img class="overflow-hidden rounded-xl rounded-bl-4xl rounded-tr-4xl h-[225px] w-[100%] object-cover" src={image}/>
+	</div>			
+</div>

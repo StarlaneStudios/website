@@ -34,6 +34,10 @@
 	--color-gravel-8: #21232d;
 	--color-gravel-9: #060c16;
 
+	--color-patreon: #ff424d;
+	--color-paypal: #003087;
+	--color-github: #1b1f23;
+
 	--color-starlane-primary: #e25bff;
 	--color-starlane-secondary: #347cf5;
 
@@ -50,6 +54,33 @@ html {
 	font-family: "Montserrat", sans-serif;
 	background-color: var(--color-dark-9);
 	color: white;
+}
+
+img {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-select: none;
+	pointer-events: none;
+}
+
+.main-container {
+    width: 100%;
+    
+	@media (width >= 40rem) {
+        max-width: 40rem;
+    }
+    
+	@media (width >= 48rem) {
+        max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+        max-width: 64rem;
+    }
+    @media (width >= 75rem) {
+        max-width: 75rem;
+    }
 }
 
 .text-gradient {
@@ -92,13 +123,4 @@ html {
 
 .btn-outline {
 	border-width: 3px;
-}
-
-.image {
-	-webkit-user-drag: none;
-	-khtml-user-drag: none;
-	-moz-user-drag: none;
-	-o-user-drag: none;
-	user-select: none;
-	pointer-events: none;
 }

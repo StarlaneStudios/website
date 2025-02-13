@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { tm } from '../../utils/tailwind';
+
+
+interface Props extends HTMLAttributes<'a'> {
+	link: string;
+	
+}
+
+const { link, class: className, ...rest } = Astro.props;
+
+const path = Astro.url.pathname;
+const isActive = path === link || (path.startsWith(link) && link.length > 1);
+
+---
+
+<a
+	href={link}
+	class={tm("my-auto transition-colors duration-200 hover:text-deepblue-4 focus:text-deepblue-4 font-semibold", className, (isActive ? 'text-deepblue-3' : 'text-white'))}
+	{...rest}
+>
+	<slot />
+</a>

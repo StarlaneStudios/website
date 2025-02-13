@@ -1,5 +1,8 @@
 ---
 import { tm } from '../../utils/tailwind';
+import { mdiArrowRight } from '@mdi/js';
+
+import Button from '../basics/Button.astro';
 import Icon from '../basics/Icon.astro';
 
 interface Props {
@@ -28,4 +31,10 @@ const { icon, title, subtitle, color, class: className, classes, ...rest } = Ast
 	</div>
 	<h1 class={tm("font-bold text-[20px] text-gravel-1 mt-4", classes?.title)}>{title}</h1>
 	<p class={tm("mt-4 text-[14px]", classes?.subtitle)}>{subtitle}</p>
+	<Button size="md" class="flex mt-6 py-[8px] justify-center">
+		<div class="flex gap-2">
+			CONTINUE
+			<Icon path={mdiArrowRight} size="md" />
+		</div>
+	</Button>
 </div>

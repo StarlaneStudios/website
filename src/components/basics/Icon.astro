@@ -1,4 +1,6 @@
 ---
+import { tm } from "../../utils/tailwind";
+
 const FONT_SIZES = {
 	xs: 0.5,
 	sm: 0.75,
@@ -19,6 +21,7 @@ interface IconProps {
 	right?: boolean;
 	noStroke?: boolean;
 	path: string;
+	class?: string;
 }
 
 const getIconSize = (size: IconProps["size"]) => {
@@ -36,7 +39,7 @@ const getIconSize = (size: IconProps["size"]) => {
 
 <!-- Icon component -->
 <svg
-	class="icon-path"
+	class={tm("icon-path", Astro.props.class)}
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 24 24"
 	role="presentation"

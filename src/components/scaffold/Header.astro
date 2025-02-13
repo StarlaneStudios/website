@@ -1,0 +1,31 @@
+---
+import darkLogoSvg from "../../assets/starlane-logo-dark.svg";
+import Spacer from "../basics/Spacer.astro";
+import NavButton from "./NavButton.astro";
+---
+
+<div class="py-7 mb-[70px] flex">
+	<a href="/">
+		<img src={darkLogoSvg.src} alt="Starlane Studios Logo" width={185} />
+	</a>
+
+	<Spacer />
+
+	<div class="flex gap-7">
+		<NavButton link="/">
+			Home
+		</NavButton>
+		<NavButton link="/blogs">
+			Blogs
+		</NavButton>
+		<NavButton link="/projects">
+			Projects
+		</NavButton>
+		<NavButton link="/about">
+			About Us
+		</NavButton>
+		<NavButton link="/socials">
+			Socials
+		</NavButton>
+	</div>
+</div>

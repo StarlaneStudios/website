@@ -1,20 +1,33 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { tm } from '../../utils/tailwind';
 
+
 const VARIANTS = {
-	default: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
-	secondary: 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded',
+	solid: 'bg-deepblue-4 text-white duration-200 hover:bg-deepblue-5 focus:bg-deepblue-5',
+	outline: 'border-3 border-deepblue-4 text-white duration-200 hover:text-deepblue-3',
+	gradient: 'bg-gradient-to-br from-starlane-primary to-starlane-secondary text-white',
+}
+
+const SIZES = {
+	sm: 'px-3 py-[3px] text-[12px]',
+	md: 'px-[18px] py-[5px] text-[14px]',
+	lg: 'px-7 py-[12px] text-[16px]',
+	xl: 'px-9 py-[14px] text-[18px]',
 }
 
 type Variant = keyof typeof VARIANTS;
+type Size = keyof typeof SIZES;
 
-interface Props {
-	variant: Variant;
+interface Props extends HTMLAttributes<'button'> {
+	variant?: Variant;
+	size?: Size;
+	link?: string;
 }
 
-const { variant } = Astro.props;
+const { size, variant, class: className, onclick: clickEvent, link, ...rest } = Astro.props;
 ---
 
-<button class={tm("flex", VARIANTS[variant ?? "default"])}>
+<button class={tm("tracking-[1px] rounded-full font-semibold uppercase cursor-pointer select-none align-middle", VARIANTS[variant ?? "solid"], SIZES[size ?? "md"], className)} onclick={link ? `window.location.href='${link}'` : clickEvent ?? undefined} {...rest}>
 	<slot />
 </button>

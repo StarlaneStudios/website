@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import errorImage from "../assets/undraw/error.svg";
+import Button from "../components/basics/Button.astro";
+---
+
+<Layout>
+	<div class="text-center mt-30">
+		<img src={errorImage.src} alt="Error" class="mb-15 w-[400px] mx-auto" />
+
+		<h1 class="text-4xl font-bold text-deepblue-0">Page not Found</h1>
+		<p class="mt-4 text-lg text-gravel-2">The page you are looking for could not be located</p>
+
+		<Button size="lg" class="w-[250px] mt-15" link="/">
+			Return home
+		</Button>
+	</div>
+</Layout>

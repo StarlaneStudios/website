@@ -1,12 +1,22 @@
 ---
+import SectionHeading from "../components/basics/SectionHeading.astro";
+import Expertise from "../components/home/Expertise.astro";
+import Button from "../components/basics/Button.astro";
+import Project from "../components/home/Project.astro";
+import Support from "../components/home/Support.astro";
 import Layout from "../layouts/Layout.astro";
+import meltdownImage from "../assets/img/projects/meltdown.png";
+import commentAnchorsImage from "../assets/img/projects/anchors.jpg";
+
+import { mdiEarth, mdiControllerClassic, mdiRocketLaunch, mdiPatreon, mdiGithub } from "@mdi/js";
+import { socialPaypal } from "../utils/icons";
 
 import "../styles/home.css";
 ---
 
 <Layout>
 	<div class="max-w-[540px] py-[50px]">
-		<p class="font-bold text-6xl text-white">
+		<p class="font-bold text-6xl text-white leading-20">
 			Turning
 			<span
 				class="text-gradient bg-gradient-to-r from-[#F149B7] to-[#815eff]"
@@ -21,14 +31,128 @@ import "../styles/home.css";
 			</span>
 		</p>
 	
-		<p class="description mt-[20px]">
+		<p class="description mt-[30px] text-md">
 			We are a group of passionate developers, artists and gamers who strive
 			to create high quality <b>games</b> and <b>software</b> for all to enjoy.
 		</p>
 
 		<div class="mt-[15px] flex gap-3">
-			<a href="/games" class="btn btn-outline btn-outline-gradient">About Us</a>
-			<a href="/about" class="btn btn-outline">Support Us</a>
+			<Button variant="solid" aria-label="About us button" link="/about">
+				About Us
+			</Button>
+			<Button variant="outline" aria-label="Support us button">
+				Support Us
+			</Button>
+		</div>	
+	</div>
+
+	<div class="mt-[100px]">
+		<SectionHeading
+			title="Our Expertise"
+			subtitle="We build and craft software across many fields"
+		/>
+
+		<div class="grid grid-cols-3 gap-7 mt-8">
+			<Expertise
+				icon={mdiEarth}
+				title="Websites"
+				subtitle="With years of experience in the field, web development is one of our strongest skills."
+				classes={{
+					icon: {
+						wrapper: "bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+					}
+				}}
+			/>
+			<Expertise
+				icon={mdiControllerClassic}
+				title="Video Games"
+				subtitle="As true gamers ourselves, we create gaming experiences we are proud of."
+				classes={{
+					icon: {
+						wrapper: "bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+					}
+				}}
+			/>
+			<Expertise
+				icon={mdiRocketLaunch}
+				title="Apps & Tools"
+				subtitle="We create various tools to help with productivity and organization."
+				classes={{
+					icon: {
+						wrapper: "bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+					}
+				}}
+			/>
+		</div>
+
+		<div class="mt-[200px]">
+			<SectionHeading
+				title="Our Projects"
+				subtitle="Presenting our proudest work"
+			/>
+
+			<div class="grid gap-7 mt-8">
+				<Project
+					reverse
+					name="Meltdown"
+					title="Critical Failure Detected!"
+					description="You are a commissioned nuclear engineer working on the night shift at your local nuclear reactor when disaster strikes. As the only engineer on site, it is up to you to save the facility from a nuclear meltdown!"
+					link="https://starlane-studios.itch.io/meltdown"
+					image={meltdownImage.src}
+					classes={{
+						name: "text-blue-400"
+					}}
+				/>
+				<Project
+					name="Comment Anchors"
+					title="VScode navigation anchors"
+					description="Comment Anchors is a useful extension that allows the creation of fully customizable navigation anchors in your files."
+					link="https://github.com/StarlaneStudios/vscode-comment-anchors"
+					image={commentAnchorsImage.src}
+					classes={{
+						name: "text-purple-400"
+					}}
+				/>
+			</div>
+		</div>
+		<div class="mt-[200px]">
+			<SectionHeading
+				title="Support our endeavours"
+				subtitle="So we can keep producting awesome stuff"
+			/>
+	
+			<div class="grid grid-cols-3 gap-7 mt-8">
+				<Support
+					icon={mdiPatreon}
+					title="Support"
+					subtitle="Consider supporting us on Patreon to help fund our projects."
+					classes={{
+						icon: {
+							wrapper: "bg-patreon",
+						}
+					}}
+				/>
+				<Support
+					icon={socialPaypal}
+					title="Donate"
+					subtitle="Show your generosity by making a one time donation."
+					classes={{
+						icon: {
+							wrapper: "bg-paypal",
+						}
+					}}
+				/>
+				<Support
+					icon={mdiGithub}
+					title="Contribute"
+					subtitle="Explore our open source repositories and projects."
+					classes={{
+						icon: {
+							wrapper: "bg-github",
+						}
+					}}
+				/>
+			</div>
 		</div>
 	</div>
 </Layout>
