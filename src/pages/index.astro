@@ -16,7 +16,7 @@ import "../styles/home.css";
 
 <Layout>
 	<div class="max-w-[540px] py-[50px]">
-		<p class="font-bold text-6xl text-white leading-20">
+		<p class="font-bold text-6xl text-deepblue-7 dark:text-white leading-20">
 			Turning
 			<span
 				class="text-gradient bg-gradient-to-r from-[#F149B7] to-[#815eff]"
@@ -95,20 +95,22 @@ import "../styles/home.css";
 				<Project
 					reverse
 					name="Meltdown"
+					alt="Meltdown Game Image"
 					title="Critical Failure Detected!"
 					description="You are a commissioned nuclear engineer working on the night shift at your local nuclear reactor when disaster strikes. As the only engineer on site, it is up to you to save the facility from a nuclear meltdown!"
 					link="https://starlane-studios.itch.io/meltdown"
-					image={meltdownImage.src}
+					image={meltdownImage}
 					classes={{
 						name: "text-blue-400"
 					}}
 				/>
 				<Project
 					name="Comment Anchors"
+					alt="Comment Anchors Image"
 					title="VScode navigation anchors"
 					description="Comment Anchors is a useful extension that allows the creation of fully customizable navigation anchors in your files."
 					link="https://github.com/StarlaneStudios/vscode-comment-anchors"
-					image={commentAnchorsImage.src}
+					image={commentAnchorsImage}
 					classes={{
 						name: "text-purple-400"
 					}}

@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 @theme {
+	--color-light-0: #f8f9fa;
+	--color-light-1: #f1f3f5;
+	--color-light-2: #e9ecef;
+	--color-light-3: #dee2e6;
+	--color-light-4: #ced4da;
+	--color-light-5: #adb5bd;
+	--color-light-6: #868e96;
+	--color-light-7: #495057;
+	--color-light-8: #343a40;
+	--color-light-9: #212529;
+
 	--color-dark-0: #ebecf3;
 	--color-dark-1: #d3d5e4;
 	--color-dark-2: #adb2cc;
@@ -52,8 +63,6 @@
 
 html {
 	font-family: "Montserrat", sans-serif;
-	background-color: var(--color-dark-9);
-	color: white;
 }
 
 img {

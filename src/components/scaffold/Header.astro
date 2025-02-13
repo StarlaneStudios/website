@@ -1,12 +1,21 @@
 ---
 import darkLogoSvg from "../../assets/starlane-logo-dark.svg";
+import lightLogoSvg from "../../assets/starlane-logo-light.svg";
+import Image from "../basics/Image.astro";
 import Spacer from "../basics/Spacer.astro";
 import NavButton from "./NavButton.astro";
 ---
 
 <div class="py-7 mb-[70px] flex">
 	<a href="/">
-		<img src={darkLogoSvg.src} alt="Starlane Studios Logo" width={185} />
+		<Image
+			class="block w-[185px]"
+			alt="Starlane Studios Logo"
+			src={{
+				dark: darkLogoSvg,
+				light: lightLogoSvg
+			}}
+		/>
 	</a>
 
 	<Spacer />

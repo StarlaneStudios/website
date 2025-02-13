@@ -26,11 +26,11 @@ const { icon, title, subtitle, color, link, class: className, classes, ...rest }
 
 ---
 
-<div class={tm("flex flex-col bg-dark-8 align-middle text-center rounded-xl p-6 shadow-md", className)} {...rest}>
+<div class={tm("flex flex-col bg-white dark:bg-dark-8 align-middle text-center rounded-xl p-6 shadow-md", className)} {...rest}>
 	<div class={tm("mx-auto rounded-xl p-3 bg-deepblue-4", classes?.icon?.wrapper)}>
 		<Icon path={icon} size={1.6} class={tm("text-white", classes?.icon?.icon)} />
 	</div>
-	<h1 class={tm("font-bold text-[20px] text-gravel-1 mt-4", classes?.title)}>{title}</h1>
+	<h1 class={tm("font-bold text-[20px] text-deepblue-7 dark:text-gravel-1 mt-4", classes?.title)}>{title}</h1>
 	<p class={tm("mt-4 text-[14px]", classes?.subtitle)}>{subtitle}</p>
 	<Button size="md" class="flex mt-6 py-[8px] justify-center" link={link}>
 		<div class="flex gap-2">
