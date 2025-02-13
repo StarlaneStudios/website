@@ -34,7 +34,10 @@
 	--color-gravel-8: #21232d;
 	--color-gravel-9: #060c16;
 
-	--starlane-gradient: linear-gradient(45deg, #e25bff, #347cf5);
+	--color-starlane-primary: #e25bff;
+	--color-starlane-secondary: #347cf5;
+
+	--starlane-gradient: linear-gradient(45deg, var(--color-starlane-primary), var(--color-starlane-secondary));
 
 	--font-size-xs: 12rem;
 	--font-size-sm: 13rem;
@@ -43,12 +46,59 @@
 	--font-size-xl: 18rem;
 }
 
-p {
-	color: var(--color-gravel-2)
-}
-
 html {
 	font-family: "Montserrat", sans-serif;
 	background-color: var(--color-dark-9);
 	color: white;
+}
+
+.text-gradient {
+	background-clip: text; 
+	-webkit-background-clip: text; 
+	-webkit-text-fill-color: transparent;
+}
+
+.btn {
+	padding: 0.25rem 1.25rem;
+	letter-spacing: 1px;
+	border-radius: 2rem;
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
+	user-select: none;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+
+.btn-solid-primary {
+	background-color: var(--color-deepblue-4);
+	color: white;
+}
+
+.btn-outline-primary {
+	border-color: var(--color-deepblue-4);
+	color: white;
+}
+
+.btn-solid-gradient {
+	background: var(--starlane-gradient);
+	color: white;
+}
+
+.btn-outline-gradient {
+	border: 3px solid var(--starlane-gradient);
+	color: white;
+}
+
+.btn-outline {
+	border-width: 3px;
+}
+
+.image {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-select: none;
+	pointer-events: none;
 }

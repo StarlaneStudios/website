@@ -24,11 +24,13 @@ interface IconProps {
 const getIconSize = (size: IconProps["size"]) => {
 	if (size === undefined) {
 		return 1;
-	} else if (typeof size === "number") {
-		return size;
-	} else {
-		return FONT_SIZES[size] || 1;
 	}
+	
+	if (typeof size === "number") {
+		return size;
+	}
+	
+	return FONT_SIZES[size] || 1;
 };
 ---
 

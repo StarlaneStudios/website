@@ -1,31 +1,34 @@
 ---
-import TextGradient from "../components/basics/TextGradient.astro";
-import Title from "../components/basics/Title.astro";
-import Stack from "../components/basics/Stack.astro";
 import Layout from "../layouts/Layout.astro";
-import Group from "../components/basics/Group.astro";
 
 import "../styles/home.css";
-
 ---
 
 <Layout>
-	<Stack class="max-w-[540px] py-[50px]">
-		<Title>
-			Turning 
-			<TextGradient c1="#F149B7" c2="#815eff">
+	<div class="max-w-[540px] py-[50px]">
+		<p class="font-bold text-6xl text-white">
+			Turning
+			<span
+				class="text-gradient bg-gradient-to-r from-[#F149B7] to-[#815eff]"
+			>
 				Dreams
-			</TextGradient>
-			into 
-			<TextGradient c1="#01cbf3" c2="#3d73d6">
+			</span>
+			into
+			<span
+				class="text-gradient bg-gradient-to-r from-[#01cbf3] to-[#3d73d6]"
+			>
 				Reality
-			</TextGradient>
-		</Title>
+			</span>
+		</p>
+	
+		<p class="description mt-[20px]">
+			We are a group of passionate developers, artists and gamers who strive
+			to create high quality <b>games</b> and <b>software</b> for all to enjoy.
+		</p>
 
-		<p class="description mt-[20px]">We are a group of passionate developers, artists and gamers who strive to create high quality <b>games</b> and <b>software</b> for all to enjoy.</p>
-
-		<Group>
-
-		</Group>
-	</Stack>
+		<div class="mt-[15px] flex gap-3">
+			<a href="/games" class="btn btn-outline btn-outline-gradient">About Us</a>
+			<a href="/about" class="btn btn-outline">Support Us</a>
+		</div>
+	</div>
 </Layout>

@@ -1,9 +1,0 @@
----
-const { cols = 3, gap = 4 } = Astro.props;
-
-const gtc = `repeat(${cols}, minmax(0, 1fr))`;
----
-
-<div class={`simple-grid grid gap-${gap}`} style=`grid-template-columns: ${gtc};`>
-	<slot />
-</div>
