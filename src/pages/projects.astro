@@ -1,0 +1,106 @@
+---
+import SectionHeading from "../components/basics/SectionHeading.astro";
+import Project from "../components/projects/Project.astro";
+import Layout from "../layouts/Layout.astro";
+
+import asteroids from "../assets/img/projects/asteroids.png";
+import meltdown from "../assets/img/projects/meltdown.png";
+import cirql from "../assets/img/projects/cirql.png";
+import sceptre from "../assets/img/projects/sceptre.svg";
+import commentAnchors from "../assets/img/projects/anchors.jpg";
+import surrealist from "../assets/img/projects/surrealist.png";
+import smashwizards from "../assets/img/projects/smashwizards.png";
+import cubecade from "../assets/img/projects/cubecade.png";
+import exodius from "../assets/img/projects/exodiusmc.png";
+---
+
+<Layout>
+	<SectionHeading
+		title="Current Projects"
+		subtitle="A list of our current and planned studio projects"
+	/>
+
+	<div class="grid grid-cols-3 gap-7 mt-15">
+		<Project
+			title="Sceptre"
+			subtitle="NPM Package for React"
+			description="Implement Next.js style page directories in your single page application by generating routing definitions from a page directory."
+			image={sceptre}
+			alt="Sceptre Image"
+			link="https://github.com/StarlaneStudios/sceptre"
+		/>
+		<Project
+			title="Cirql"
+			subtitle="SurrealDB ORM"
+			description="Cirql is a simple and lightweight ORM and query builder for SurrealDB which provides you with complete control."
+			image={cirql}
+			alt="Cirql Image"
+			link="https://github.com/StarlaneStudios/cirql"
+		/>
+		<Project
+			title="Meltdown"
+			subtitle="Isometric Puzzle Game"
+			description="Meltdown is an isometric puzzle game with the goal of repairing coolant pipes that flow through the nuclear power plant."
+			image={meltdown}
+			alt="Meltdown Image"
+			link="https://starlane-studios.itch.io/meltdown"
+		/>
+		<Project
+			title="Asteroids"
+			subtitle="Space Shooter Game"
+			description="A simple arcade shooter where you progress waves while battling asteroids and enemies."
+			image={asteroids}
+			alt="Asteroids Image"
+			link="https://starlane-studios.itch.io/asteroids"
+		/>
+		<Project
+			title="Comment Anchors"
+			subtitle="VScode Extension"
+			description="A useful extension that allows the creation of fully customizable navigation anchors in your files."
+			image={commentAnchors}
+			alt="Comment Anchors Image"
+			link="https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors"
+		/>
+	</div>
+
+	<SectionHeading
+		title="Previous Projects"
+		subtitle="A list of our previous studio projects"
+		class="mt-30"
+	/>
+
+	<div class="grid grid-cols-3 gap-7 mt-15">
+		<Project
+			title="Surrealist"
+			subtitle="Query Explorer"
+			description="An open source query explorer for SurrealDB. Left Starlane to become an official product of SurrealDB."
+			image={surrealist}
+			alt="Surrealist Image"
+			link="/blogs/surrealist-becomes-the-official-ui-of-surrealdb"
+		/>
+		<Project
+			title="Smash Wizards"
+			subtitle="Minecraft Server"
+			description="A unique, one of a kind magical brawl Minecraft server with custom spells and abilities."
+			image={smashwizards}
+			alt="Smash Wizards Image"
+			link="/projects/smash-wizards"
+		/>
+		<Project
+			title="Cubecade"
+			subtitle="Minecraft Server"
+			description="A unique fully custom Minecraft minigame network featuring your favorite games with a twist."
+			image={cubecade}
+			alt="Cubecade Image"
+			link="/projects/cubecade"
+		/>
+		<Project
+			title="ExodiusMC"
+			subtitle="Minecraft Server"
+			description="The original Minecraft server that started it all, featuring custom minigames and takes on classic games like Factions."
+			image={exodius}
+			alt="ExodiusMC Image"
+			link="/projects/exodiusmc"
+		/>
+	</div>
+</Layout>

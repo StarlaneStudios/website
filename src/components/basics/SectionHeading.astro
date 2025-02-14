@@ -1,13 +1,16 @@
 ---
+import { tm } from '../../utils/tailwind';
+
 interface Props {
 	title: string;
 	subtitle: string;
+	class?: string;
 }
 
-const { title, subtitle, ...rest } = Astro.props;
+const { title, subtitle, class: className, ...rest } = Astro.props;
 ---
 
-<div class="text-center" {...rest}>
+<div class={tm("text-center", className)} {...rest}>
 	<h1 class="font-bold text-[30px] text-deepblue-7 dark:text-gravel-1">{title}</h1>
 	<p class="mt-2">{subtitle}</p>
 </div>
