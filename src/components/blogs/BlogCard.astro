@@ -5,9 +5,7 @@ import { tm } from "../../utils/tailwind";
 import { mdiChevronRight } from "@mdi/js";
 
 import Icon from "../basics/Icon.astro";
-import Image from "../basics/Image.astro";
 import dayjs from "dayjs";
-import Spacer from "../basics/Spacer.astro";
 
 interface Props {
 	blog: CollectionEntry<"blogs">;
@@ -29,11 +27,9 @@ const slug = blog.id.replace(/^\d{4}-\d{2}-\d{2}-/, "");
 const primaryCategory = BLOG_CATEGORIES.find(
 	(cat) => cat.value === blog.data.categories[0],
 );
-
-console.log(`text-${primaryCategory?.color}`);
 ---
 
-<a class="flex flex-row w-full p-4 bg-white dark:bg-dark-8 rounded-xl gap-5 shadow-md" href=`/blogs/${slug}` {...rest}>
+<a class="flex flex-row w-full p-4 bg-white transition-colors duration-200 dark:bg-dark-8 hover:bg-light-2 dark:hover:bg-dark-7 rounded-xl gap-5 shadow-md" href=`/blogs/${slug}` {...rest}>
 	<img 
 		class="overflow-hidden shrink-0 object-cover rounded-xl my-auto w-90 h-50 rounded-bl-[50px] rounded-tr-[50px]"
 		alt={blog.data.title + " Blog Image"}
