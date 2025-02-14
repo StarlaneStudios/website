@@ -2,6 +2,7 @@
 import darkLogoSvg from '../../assets/starlane-logo-dark.svg';
 import lightLogoSvg from '../../assets/starlane-logo-light.svg';
 import Image from '../basics/Image.astro';
+import FooterLink from './FooterLink.astro';
 ---
 
 <div class="w-full bg-light-1 dark:bg-dark-8">
@@ -20,30 +21,75 @@ import Image from '../basics/Image.astro';
 	
 			<div class="grid grid-rows-8 gap-1 content-stretch col-span-1">
 				<h1 class="text-deepblue-7 dark:text-gravel-0 font-bold">Projects</h1>
-				<a href="https://starlane-studios.itch.io/asteroids">Asteroids</a>
-				<a href="https://github.com/StarlaneStudios/cirql">Cirql</a>
-				<a href="https://github.com/StarlaneStudios/vscode-comment-anchors">Comment Anchors</a>
-				<a href="https://starlane-studios.itch.io/meltdown">Meltdown</a>
-				<a href="https://github.com/StarlaneStudios/sceptre">Sceptre</a>
+				<FooterLink
+					link="https://starlane-studios.itch.io/asteroids"
+					label="Asteroids"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios/cirql"
+					label="Cirql"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios/vscode-comment-anchors"
+					label="Comment Anchors"
+				/>
+				<FooterLink
+					link="https://starlane-studios.itch.io/meltdown"
+					label="Meltdown"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios/sceptre"
+					label="Sceptre"
+				/>
 			</div>
 	
 			<div class="grid grid-rows-8 gap-1 content-stretch">
 				<h1 class="text-deepblue-7 dark:text-gravel-0 font-bold">Community</h1>
-				<a href="https://bsky.app/profile/starlane.studio">Bluesky</a>
-				<a href="https://discord.gg/exaQDX2">Discord</a>
-				<a href="https://github.com/StarlaneStudios">GitHub</a>
-				<a href="https://patreon.com/StarlaneStudios">Patreon</a>
-				<a href="https://twitch.tv/StarlaneStudios">Twitch</a>
-				<a href="https://x.com/StarlaneStudios">X</a>
-				<a href="https://youtube.com/@StarlaneStudios">YouTube</a>
-				
+
+				<FooterLink
+					link="https://bsky.app/profile/starlane.studio"
+					label="Bluesky"
+				/>
+				<FooterLink
+					link="https://discord.gg/exaQDX2"
+					label="Discord"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios"
+					label="GitHub"
+				/>
+				<FooterLink
+					link="https://patreon.com/StarlaneStudios"
+					label="Patreon"
+				/>
+				<FooterLink
+					link="https://twitch.tv/StarlaneStudios"
+					label="Twitch"
+				/>
+				<FooterLink
+					link="https://x.com/StarlaneStudios"
+					label="X"
+				/>
+				<FooterLink
+					link="https://youtube.com/@StarlaneStudios"
+					label="YouTube"
+				/>
 			</div>
 	
 			<div class="grid grid-rows-8 gap-1 content-stretch">
 				<h1 class="text-deepblue-7 dark:text-gravel-0 font-bold">About</h1>
-				<a href="/about">About Us</a>
-				<a href="/brand">Brand Guide</a>
-				<a href="/privacy-policy">Privacy Policy</a>
+				<FooterLink
+					link="/about"
+					label="About Us"
+				/>
+				<FooterLink
+					link="/brand"
+					label="Brand Guide"
+				/>
+				<FooterLink
+					link="/privacy-policy"
+					label="Privacy Policy"
+				/>
 			</div>
 		</div>
 	</div>
