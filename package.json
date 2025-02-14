@@ -16,6 +16,7 @@
 		"@astrojs/mdx": "^4.0.8",
 		"@mdi/js": "^7.4.47",
 		"astro": "^5.2.5",
+		"dayjs": "^1.11.13",
 		"tailwind-merge": "^3.0.1"
 	},
 	"devDependencies": {

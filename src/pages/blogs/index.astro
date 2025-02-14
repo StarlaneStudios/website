@@ -1,23 +1,27 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import BlogPost from "../../components/blogs/BlogPost.astro";
+import dayjs from "dayjs";
+import BlogCard from "../../components/blogs/BlogCard.astro";
+import SectionHeading from "../../components/basics/SectionHeading.astro";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blogs");
 ---
 
 <Layout>
-	<section>
-		<h2>Latest Posts</h2>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<BlogPost post={post} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	<SectionHeading
+		title="Stay up to Date"
+		subtitle="Our personal blog for updates and announcements"
+	/>
 
+	<div class="flex flex-col justify-start items-stretch grid-cols-1 gap-7 mt-15">
+		{
+			posts
+				.filter((post) => post.data.visible)
+				.sort(
+					(a, b) => dayjs(b.data.date).unix() - dayjs(a.data.date).unix(),
+				)
+				.map((post) => <BlogCard blog={post} />)
+		}
+	</div>
 </Layout>

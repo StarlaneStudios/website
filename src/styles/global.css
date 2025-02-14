@@ -62,6 +62,7 @@
 
 	--color-starlane-primary: #e25bff;
 	--color-starlane-secondary: #347cf5;
+	--color-starlane-orange: #ffb22b;
 
 	--starlane-gradient: linear-gradient(45deg, var(--color-starlane-primary), var(--color-starlane-secondary));
 

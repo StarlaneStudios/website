@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { BLOG_CATEGORIES } from "../../contants";
+import { tm } from "../../utils/tailwind";
+import { mdiChevronRight } from "@mdi/js";
+
+import Icon from "../basics/Icon.astro";
+import Image from "../basics/Image.astro";
+import dayjs from "dayjs";
+import Spacer from "../basics/Spacer.astro";
+
+interface Props {
+	blog: CollectionEntry<"blogs">;
+	classes?: {
+		image?: string;
+		category?: string;
+		title?: string;
+		author?: string;
+		date?: string;
+		summary?: string;
+		button?: string;
+	};
+}
+
+const { blog, classes, ...rest } = Astro.props;
+
+const image = `/img/blogs/${blog.id}.png`;
+const slug = blog.id.replace(/^\d{4}-\d{2}-\d{2}-/, "");
+const primaryCategory = BLOG_CATEGORIES.find(
+	(cat) => cat.value === blog.data.categories[0],
+);
+
+console.log(`text-${primaryCategory?.color}`);
+---
+
+<a class="flex flex-row w-full p-4 bg-white dark:bg-dark-8 rounded-xl gap-5 shadow-md" href=`/blogs/${slug}` {...rest}>
+	<img 
+		class="overflow-hidden shrink-0 object-cover rounded-xl my-auto w-90 h-50 rounded-bl-[50px] rounded-tr-[50px]"
+		alt={blog.data.title + " Blog Image"}
+		src={image}
+	/>
+	
+	<div class="flex flex-col gap-0">
+		<h2 class={tm("text-[16px] font-bold", primaryCategory?.color, classes?.category)}>
+			{primaryCategory?.label}
+		</h2>
+		<h1
+			class={tm(
+				`font-bold text-[22px] text-deepblue-7 dark:text-gravel-1`,
+				classes?.title,
+			)}
+		>
+			{blog.data.title}
+		</h1>
+		<div class="flex flex-row gap-0 mt-2">
+			<p class={tm("text-[16px] text-deepblue-7 dark:text-deepblue-3 font-bold", classes?.author)}>
+				{blog.data.author}
+			</p>
+			<p class="text-[16px] mx-1.5">-</p>
+			<p class={tm("text-[16px]", classes?.date)}>
+				{dayjs(blog.data.date).format('MMMM DD, YYYY')}
+			</p>
+		</div>
+		<p class={tm("mt-5 text-[15px]", classes?.summary)}>
+			{blog.data.summary}
+		</p>
+	</div>
+	
+	<Icon path={mdiChevronRight} class="text-deepblue-7 dark:text-dark-0 my-auto shrink-0" size={2} />
+</a>
