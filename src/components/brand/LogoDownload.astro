@@ -1,0 +1,48 @@
+---
+import { mdiDownload } from "@mdi/js";
+import { tm } from "../../utils/tailwind";
+
+import Icon from "../basics/Icon.astro";
+import Image from "../basics/Image.astro";
+
+interface Props {
+	title: string;
+	logo: ImageMetadata;
+	alt: string;
+	classes?: {
+		root?: string;
+		title?: string;
+		separator?: string;
+		logo?: string;
+		logoBox?: string;
+	}
+}
+
+const {
+	title,
+	logo,
+	alt,
+	classes,
+	...rest
+} = Astro.props;
+---
+<div class={tm("bg-white dark:bg-dark-8 flex flex-col rounded-xl shadow-md", classes?.root)} {...rest}>
+	<div class={tm("flex-col rounded-t-xl", classes?.logoBox)}>
+		<Image src={logo} alt={alt} class={tm("p-25 rounded-t-xl", classes?.logo)} />
+	</div>
+
+	<hr class={tm("w-full border-1 border-t border-light-3 dark:border-dark-7", classes?.separator)} />
+
+	<div class="flex flex-col flex-1 p-5 gap-1">
+		<h1 class={tm("font-bold text-[20px] text-deepblue-7 dark:text-gravel-1", classes?.title)}>{title}</h1>
+		
+		<a class="flex items-center gap-1 my-auto mt-1 align-middle" href={logo.src} download>
+			<p class="text-deepblue-7 dark:text-deepblue-3 text-md align-middle">Download Logo</p>
+			<Icon
+				path={mdiDownload}
+				class="text-deepblue-7 dark:text-deepblue-3"
+				size={1}
+			/>
+		</a> 
+	</div>
+</div>

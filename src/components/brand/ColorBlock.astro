@@ -1,0 +1,36 @@
+---
+import { tm } from '../../utils/tailwind';
+
+interface Props {
+	title: string;
+	hex: string;
+	rgb: string;
+	cmyk: string;
+	classes?: {
+		root?: string;
+		textWrapper?: string;
+		title?: string;
+		text?: string;
+		hex?: string;
+		rgb?: string;
+		cmyk?: string;
+	}
+}
+
+const {
+	title,
+	hex,
+	rgb,
+	cmyk,
+	classes,
+	...rest
+} = Astro.props;
+---
+<div class={tm(`flex flex-col w-full rounded-xl shadow-md`, classes?.root)} {...rest}>
+	<div class={tm("flex flex-col p-5 gap-1", classes?.textWrapper)}>
+		<h1 class={tm("font-bold text-[20px] mb-2 text-white", classes?.title, classes?.text)}>{title}</h1>
+		<p class={tm("text-white", classes?.hex, classes?.text)}>HEX: {hex}</p>
+		<p class={tm("text-white", classes?.rgb, classes?.text)}>RGB: {rgb}</p>
+		<p class={tm("text-white", classes?.cmyk, classes?.text)}>CMYK: {cmyk}</p>
+	</div>	
+</div>

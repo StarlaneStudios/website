@@ -1,0 +1,461 @@
+---
+import SectionHeading from "../components/basics/SectionHeading.astro";
+import LogoDownload from "../components/brand/LogoDownload.astro";
+import Layout from "../layouts/Layout.astro";
+
+import logoLight from "../assets/starlane-logo-light.svg";
+import logoDark from "../assets/starlane-logo-dark.svg";
+import ColorBlock from "../components/brand/ColorBlock.astro";
+import GradientBlock from "../components/brand/GradientBlock.astro";
+import ColorPaletteSegment from "../components/brand/ColorPaletteSegment.astro";
+---
+
+<Layout>
+	<SectionHeading
+		title="Brand Guide"
+		subtitle="Represent Starlane Studios"
+	/>
+
+	<div class="grid grid-cols-2 gap-7 mt-15">
+		<LogoDownload
+			title="Starlane Light Theme Logo"
+			logo={logoLight}
+			alt="Starlane Studios Light Logo"
+			classes={{
+				logoBox: "bg-light-2"
+			}}
+		/>
+		<LogoDownload
+			title="Starlane Dark Theme Logo"
+			logo={logoDark}
+			alt="Starlane Studios Dark Logo"
+			classes={{
+				logoBox: "bg-deepblue-8",
+			}}
+		/>
+	</div>
+
+	<SectionHeading
+		title="Color Palette"
+		subtitle="Our official color scheme"
+		class="mt-30"
+	/>
+
+	<div class="grid grid-cols-3 gap-7 mt-15">
+		<ColorBlock
+			title="Starlane Pink"
+			hex="#e25bff"
+			rgb="226, 91, 255"
+			cmyk="11.37%, 64.31%, 0%, 0%"
+			classes={{
+				root: "bg-starlane-primary"
+			}}
+		/>
+		<ColorBlock
+			title="Starlane Blue"
+			hex="#347cf5"
+			rgb="52, 124, 245"
+			cmyk="78.78%, 49.39%, 0%, 3.92%"
+			classes={{
+				root: "bg-starlane-secondary"
+			}}
+		/>
+		<GradientBlock
+			title="Starlane Gradient"
+			from="#e25bff"
+			to="#347cf5"
+			classes={{
+				root: "bg-gradient-to-br from-starlane-primary to-starlane-secondary"
+			}}
+		/>
+	</div>
+
+	<h1 class="mt-10 text-lg font-bold text-deepblue-7 dark:text-dark-0">Deep Blue</h1>
+
+	<div class="grid grid-cols-10 gap-3 mt-2">
+		<ColorPaletteSegment
+			label="0"
+			hex="#edebff"
+			classes={{
+				root: "bg-deepblue-0 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="1"
+			hex="#cac6ed"
+			classes={{
+				root: "bg-deepblue-1 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="2"
+			hex="#a7a0de"
+			classes={{
+				root: "bg-deepblue-2 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="3"
+			hex="#837bd0"
+			classes={{
+				root: "bg-deepblue-3 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="4"
+			hex="#6155c2"
+			classes={{
+				root: "bg-deepblue-4 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="5"
+			hex="#473ba8"
+			classes={{
+				root: "bg-deepblue-5 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="6"
+			hex="#372e83"
+			classes={{
+				root: "bg-deepblue-6 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="7"
+			hex="#26205c"
+			classes={{
+				root: "bg-deepblue-7 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="8"
+			hex="#16143b"
+			classes={{
+				root: "bg-deepblue-8 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="9"
+			hex="#080619"
+			classes={{
+				root: "bg-deepblue-9 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+
+	</div>
+
+	<h1 class="mt-5 text-lg font-bold text-deepblue-7 dark:text-dark-0">Dark</h1>
+
+	<div class="grid grid-cols-10 gap-3 mt-2">
+		<ColorPaletteSegment
+			label="0"
+			hex="#ebecf3"
+			classes={{
+				root: "bg-dark-0 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="1"
+			hex="#d3d5e4"
+			classes={{
+				root: "bg-dark-1 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="2"
+			hex="#adb2cc"
+			classes={{
+				root: "bg-dark-2 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="3"
+			hex="#8089b0"
+			classes={{
+				root: "bg-dark-3 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="4"
+			hex="#606a97"
+			classes={{
+				root: "bg-dark-4 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="5"
+			hex="#4c537d"
+			classes={{
+				root: "bg-dark-5 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="6"
+			hex="#3e4466"
+			classes={{
+				root: "bg-dark-6 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="7"
+			hex="#363b56"
+			classes={{
+				root: "bg-dark-7 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="8"
+			hex="#212437"
+			classes={{
+				root: "bg-dark-8 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="9"
+			hex="#161721"
+			classes={{
+				root: "bg-dark-9 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+	</div>
+
+	<h1 class="mt-5 text-lg font-bold text-deepblue-7 dark:text-dark-0">Slate</h1>
+
+	<div class="grid grid-cols-10 gap-3 mt-2">
+		<ColorPaletteSegment
+			label="0"
+			hex="#f5f5f7"
+			classes={{
+				root: "bg-slate-0 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="1"
+			hex="#e7e7ed"
+			classes={{
+				root: "bg-slate-1 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="2"
+			hex="#dcdce4"
+			classes={{
+				root: "bg-slate-2 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="3"
+			hex="#9f9fac"
+			classes={{
+				root: "bg-slate-3 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="4"
+			hex="#848495"
+			classes={{
+				root: "bg-slate-4 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="5"
+			hex="#6a6a7b"
+			classes={{
+				root: "bg-slate-5 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="6"
+			hex="#39393c"
+			classes={{
+				root: "bg-slate-6 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="7"
+			hex="#2b2b2f"
+			classes={{
+				root: "bg-slate-7 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="8"
+			hex="#222226"
+			classes={{
+				root: "bg-slate-8 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="9"
+			hex="#19191D"
+			classes={{
+				root: "bg-slate-9 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+	</div>
+
+	<h1 class="mt-5 text-lg font-bold text-deepblue-7 dark:text-dark-0">Light</h1>
+
+	<div class="grid grid-cols-10 gap-3 mt-2">
+		<ColorPaletteSegment
+			label="0"
+			hex="#f8f9fa"
+			classes={{
+				root: "bg-light-0 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="1"
+			hex="#f1f3f5"
+			classes={{
+				root: "bg-light-1 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="2"
+			hex="#e9ecef"
+			classes={{
+				root: "bg-light-2 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="3"
+			hex="#dee2e6"
+			classes={{
+				root: "bg-light-3 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="4"
+			hex="#ced4da"
+			classes={{
+				root: "bg-light-4 h-25",
+				label: "text-black",
+				hex: "text-black"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="5"
+			hex="#adb5bd"
+			classes={{
+				root: "bg-light-5 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="6"
+			hex="#868e96"
+			classes={{
+				root: "bg-light-6 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="7"
+			hex="#495057"
+			classes={{
+				root: "bg-light-7 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="8"
+			hex="#343a40"
+			classes={{
+				root: "bg-light-8 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+		<ColorPaletteSegment
+			label="9"
+			hex="#212529"
+			classes={{
+				root: "bg-light-9 h-25",
+				label: "text-white",
+				hex: "text-white"
+			}}
+		/>
+	</div>
+<!-- 
+	<SectionHeading
+		title="Projects"
+		subtitle="Specific project branding"
+		class="mt-30"
+	/>
+
+	 -->
+</Layout>
