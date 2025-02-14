@@ -8,9 +8,11 @@ interface Props extends HTMLAttributes<"a"> {
 }
 
 const { link, label, class: className, ...rest } = Astro.props;
+const target = link.startsWith("http") ? "_blank" : "_self";
 ---
 <a
 	href={link}
+	target={target}
 	class={tm("hover:text-deepblue-4 dark:hover:text-deepblue-3 transition-color duration-200 hover:opacity-95", className)}
 >
 	{label}

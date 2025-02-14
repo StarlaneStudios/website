@@ -26,8 +26,10 @@ interface Props extends HTMLAttributes<'button'> {
 }
 
 const { size, variant, class: className, onclick: clickEvent, link, ...rest } = Astro.props;
+const target = link?.startsWith('http') ? '_blank' : '_self';
+const action = target === '_blank' ? `window.open('${link}', '_blank')` : `window.location.href='${link}'`;
 ---
 
-<button class={tm("tracking-[1px] rounded-full font-semibold uppercase cursor-pointer select-none align-middle", VARIANTS[variant ?? "solid"], SIZES[size ?? "md"], className)} onclick={link ? `window.location.href='${link}'` : clickEvent ?? undefined} {...rest}>
+<button class={tm("tracking-[1px] rounded-full font-semibold uppercase cursor-pointer select-none align-middle", VARIANTS[variant ?? "solid"], SIZES[size ?? "md"], className)} onclick={link ? action : (clickEvent ?? undefined)} {...rest}>
 	<slot />
 </button>
