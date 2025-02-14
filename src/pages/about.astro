@@ -1,0 +1,218 @@
+---
+import Image from "../components/basics/Image.astro";
+import SectionHeading from "../components/basics/SectionHeading.astro";
+import Layout from "../layouts/Layout.astro";
+import starlaneIcon from "../assets/starlane-icon.svg";
+import Founder from "../components/about/Founder.astro";
+
+import julian from "../assets/img/founders/julian.png";
+import matthew from "../assets/img/founders/matt.png";
+import thomas from "../assets/img/founders/thomas.png";
+
+import peb from "../assets/img/contributors/peb.png";
+import eli from "../assets/img/contributors/eli.jpeg";
+import landon from "../assets/img/contributors/landon.jpg";
+import kablamme from "../assets/img/contributors/kablamme.png";
+import jackson from "../assets/img/contributors/jackson.png";
+import jordan from "../assets/img/contributors/jordan.png";
+import john from "../assets/img/contributors/john.jpg";
+import beau from "../assets/img/contributors/beau.png";
+import tjalp from "../assets/img/contributors/tjalp.jpg";
+import densorius from "../assets/img/contributors/densorius.png";
+import bitheral from "../assets/img/contributors/bitheral.png";
+import sadkur from "../assets/img/contributors/sadkur.png";
+import josh from "../assets/img/contributors/josh.png";
+import rex from "../assets/img/contributors/rex.png";
+import roy from "../assets/img/contributors/roy.png";
+import brainfed from "../assets/img/contributors/brainfed.png";
+import lnaf from "../assets/img/contributors/lnaf.png";
+import harpiart from "../assets/img/contributors/harpiart.png";
+---
+
+<Layout>
+	<SectionHeading
+		title="Who are we?"
+		subtitle="The story of Starlane Studios"
+	/>
+
+	<div class="grid gap-2 mt-15">
+		<h1 class="text-xl text-deepblue-7 dark:text-gravel-0 font-bold mb-2">About Us</h1>
+		<p>We are Starlane Studios,</p>
+		<p>
+			As a group of passionate developers, artists and gamers, we strive
+			to create high quality games and software for all to enjoy. What
+			started as a collective interest in game modding quickly turned out
+			in a creative quest to build games we enjoy and love to share with
+			others.
+		</p>
+		<p>
+			Our team consists of members spread across the globe, with everyone
+			taking up their own roles and tasks. The team is lead by Starlane
+			Studios founder & technical lead Julian Mills, who has spent years
+			developing software solutions and fun games. We have experience in
+			fields ranging from web development and game design all the way to
+			composing music and making art.
+		</p>
+		<p>
+			A complete overview of all our projects can be found on our projects
+			page. Interested in our future? Feel free to join our community!
+		</p>
+	</div>
+
+	<div class="grid gap-2 mt-10">
+		<h1 class="text-xl text-deepblue-7 dark:text-gravel-0 font-bold mb-2">Our Goals</h1>
+		<p>
+			Here at Starlane Studios we believe delivering high quality games
+			and software should be our top priority. We spend significant time
+			testing, improving, and revising our progress until we receive the
+			results we want. This assures us we are always putting out the best
+			work we can make.
+		</p>
+	</div>
+
+	<div class="flex mt-13 justify-center">
+		<Image
+			src={starlaneIcon}
+			alt="Starlane Studios Icon"
+			class="w-19"
+		/>
+	</div>
+
+	<SectionHeading
+		title="Meet the Founders"
+		subtitle="The people who started it all"
+		class="my-13"
+	/>
+
+	<div class="grid grid-cols-3 gap-7">
+		<Founder
+			name="Julian Mills"
+			alt="Image of Julian Mills"
+			role="Founder & Technical Lead"
+			bio="Passionate developer and designer who enjoys creating games and building creative solutions. Founder of the studio since 2018."
+			linkedIn="macjuul"
+			email="julian@starlane.org"
+			location="The Netherlands"
+			image={julian}
+		/>
+		<Founder
+			name="Matthew McFadden"
+			alt="Image of Matthew McFadden"
+			role="Co-Founder & Operations Lead"
+			bio="Currently in college majoring in ICT. Passionate software engineer and game developer. Keeps the studio running on a daily basis."
+			linkedIn="mmcfad"
+			email="matthew@starlane.org"
+			location="Kentucky, USA"
+			image={matthew}
+		/>
+		<Founder
+			name="Thomas Buwick"
+			alt="Image of Thomas Buwick"
+			role="Co-Founder & Game Lead"
+			bio="Enjoys designing games, making art with Blender, and creating pixel-art on the side. Leads the studio's game projects."
+			linkedIn="thomasbuwick"
+			email="thomas@starlane.org"
+			location="Illinois, USA"
+			image={thomas}
+		/>
+	</div>
+	
+	<SectionHeading
+		title="Contributors & Affiliates"
+		subtitle="The people who make Starlane Studios possible"
+		class="mt-25 mb-13"
+	/>
+
+	<div class="flex flex-row flex-wrap justify-center align-middle gap-4 max-w-[700px] mx-auto">
+		<Image
+			src={peb}
+			alt="Image of Peb"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={eli}
+			alt="Image of Eli"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={landon}
+			alt="Image of Landon"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={kablamme}
+			alt="Image of Kablamme"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={jackson}
+			alt="Image of Jackson"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={jordan}
+			alt="Image of Jordan"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={john}
+			alt="Image of John"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={beau}
+			alt="Image of Beau"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={tjalp}
+			alt="Image of Tjalp"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={densorius}
+			alt="Image of Densorius"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={bitheral}
+			alt="Image of Bitheral"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={sadkur}
+			alt="Image of Sadkur"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={josh}
+			alt="Image of Josh"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={rex}
+			alt="Image of Rex"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={roy}
+			alt="Image of Roy"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={brainfed}
+			alt="Image of Brainfed"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={lnaf}
+			alt="Image of Lnaf"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+		<Image
+			src={harpiart}
+			alt="Image of Harpiart"
+			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		/>
+	</div>
+</Layout>

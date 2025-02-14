@@ -1,0 +1,89 @@
+---
+import { mdiEarth, mdiLinkedin, mdiMail } from "@mdi/js";
+import { tm } from "../../utils/tailwind";
+
+import Icon from "../basics/Icon.astro";
+import Image from "../basics/Image.astro";
+import Spacer from "../basics/Spacer.astro";
+
+interface Props {
+	name: string;
+	role: string;
+	bio: string;
+	linkedIn: string;
+	email: string;
+	location: string;
+	image: ImageMetadata;
+	alt: string;
+	classes?: {
+		name?: string;
+		role?: string;
+		bio?: string;
+		image?: string;
+	}
+}
+
+const {
+	name,
+	role,
+	bio,
+	linkedIn,
+	email,
+	location,
+	image,
+	alt,
+	classes,
+	...rest
+} = Astro.props;
+---
+<div class="flex flex-col bg-white dark:bg-dark-8 rounded-xl shadow-md" {...rest}>
+	<div class="relative">
+		<Image src={image} alt={alt} class={tm("overflow-hidden h-[400px] w-[100%] object-cover rounded-t-xl", classes?.image)} />
+
+		<svg
+			viewBox="0 0 904 70"
+			class="absolute right-[-1px] bottom-[-1px] left-[-1px]"
+		>
+			<title>Founder Card</title>
+			<path
+				d="M903.683,0C753.07,38.526 649.304,57.944 451.842,57.944C254.379,57.944 150.614,38.733 0,0L0,69.49L903.683,69.49L903.683,0Z"
+				class="fill-white dark:fill-dark-8"
+			/>
+		</svg>
+	</div>
+
+	<div class="flex flex-col flex-1 p-5 rounded-b-xl">
+		<h1 class={tm("font-bold text-center text-[20px] text-deepblue-7 dark:text-gravel-1", classes?.name)}>{name}</h1>
+		<p class={tm("text-[14px] text-center dark:text-gravel-4", classes?.role)}>{role}</p>
+		<p class={tm("mt-5 text-[15px]", classes?.bio)}>{bio}</p>
+
+		<Spacer />
+		
+		<div class="flex items-center gap-3 my-auto mt-5 align-middle">
+			<Icon
+				path={mdiLinkedin}
+				size={1}
+				class="text-deepblue-7 dark:text-gravel-0"
+			/>
+			<a href=`https://www.linkedin.com/in/${linkedIn}` class="text-md align-middle text-deepblue-7 dark:text-gravel-0">@{linkedIn}</a>
+		</div>
+
+		<div class="flex items-center gap-3 my-auto mt-1 align-middle">
+			<Icon
+				path={mdiMail}
+				size={1}
+				class="text-deepblue-7 dark:text-gravel-0"
+			/>
+			<a href=`mailto:${email}` class="text-md align-middle text-deepblue-7 dark:text-gravel-0">{email}</a>
+		</div>
+
+		<div class="flex items-center gap-3 my-auto mt-1 align-middle">
+			<Icon
+				path={mdiEarth}
+				size={1}
+				class="text-deepblue-7 dark:text-gravel-0"
+			/>
+			<p class="text-md align-middle text-deepblue-7 dark:text-gravel-0">{location}</a>
+		</div>
+	</div>
+</div>
