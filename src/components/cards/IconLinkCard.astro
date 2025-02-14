@@ -4,9 +4,11 @@ import { mdiArrowRight } from '@mdi/js';
 
 import Button from '../basics/Button.astro';
 import Icon from '../basics/Icon.astro';
+import Spacer from '../basics/Spacer.astro';
 
 interface Props {
 	icon: string;
+	btnText: string;
 	title: string;
 	subtitle: string;
 	class?: string;
@@ -22,19 +24,21 @@ interface Props {
 	}
 }
 
-const { icon, title, subtitle, color, link, class: className, classes, ...rest } = Astro.props;
-
+const { icon, btnText, title, subtitle, color, link, class: className, classes, ...rest } = Astro.props;
 ---
 
-<div class={tm("flex flex-col bg-white dark:bg-dark-8 align-middle text-center rounded-xl p-6 shadow-md", className)} {...rest}>
+<div class={tm("flex flex-col flex-1 bg-white dark:bg-dark-8 align-middle text-center rounded-xl p-6 shadow-md", className)} {...rest}>
 	<div class={tm("mx-auto rounded-xl p-3 bg-deepblue-4", classes?.icon?.wrapper)}>
 		<Icon path={icon} size={1.6} class={tm("text-white", classes?.icon?.icon)} />
 	</div>
 	<h1 class={tm("font-bold text-[20px] text-deepblue-7 dark:text-gravel-1 mt-4", classes?.title)}>{title}</h1>
 	<p class={tm("mt-4 text-[14px]", classes?.subtitle)}>{subtitle}</p>
+
+	<Spacer />
+
 	<Button size="md" class="flex mt-6 py-[8px] justify-center" link={link}>
 		<div class="flex gap-2">
-			CONTINUE
+			{btnText}
 			<Icon path={mdiArrowRight} size="md" />
 		</div>
 	</Button>

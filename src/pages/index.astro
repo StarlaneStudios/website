@@ -3,7 +3,6 @@ import SectionHeading from "../components/basics/SectionHeading.astro";
 import Expertise from "../components/home/Expertise.astro";
 import Button from "../components/basics/Button.astro";
 import Project from "../components/home/Project.astro";
-import Support from "../components/home/Support.astro";
 import Layout from "../layouts/Layout.astro";
 import meltdownImage from "../assets/img/projects/meltdown.png";
 import commentAnchorsImage from "../assets/img/projects/anchors.jpg";
@@ -12,6 +11,7 @@ import { mdiEarth, mdiControllerClassic, mdiRocketLaunch, mdiPatreon, mdiGithub 
 import { socialPaypal } from "../utils/icons";
 
 import "../styles/home.css";
+import IconLinkCard from "../components/cards/IconLinkCard.astro";
 ---
 
 <Layout>
@@ -119,41 +119,44 @@ import "../styles/home.css";
 		</div>
 		<div class="mt-[200px]">
 			<SectionHeading
-				title="Support our endeavours"
+				title="Support Our Endeavours"
 				subtitle="So we can keep producting awesome stuff"
 			/>
 	
 			<div class="grid grid-cols-3 gap-7 mt-15">
-				<Support
+				<IconLinkCard
 					icon={mdiPatreon}
+					btnText="Support Us"
 					title="Support"
 					subtitle="Consider supporting us on Patreon to help fund our projects."
 					link="https://patreon.com/StarlaneStudios"
 					classes={{
 						icon: {
-							wrapper: "bg-patreon",
+							wrapper: "bg-gradient-to-br from-starlane-primary to-starlane-secondary",
 						}
 					}}
 				/>
-				<Support
+				<IconLinkCard
 					icon={socialPaypal}
+					btnText="Donate to Us"
 					title="Donate"
 					subtitle="Show your generosity by making a one time donation."
 					link="https://paypal.me/StarlaneStudios"
 					classes={{
 						icon: {
-							wrapper: "bg-paypal",
+							wrapper: "bg-gradient-to-br from-starlane-primary to-starlane-secondary",
 						}
 					}}
 				/>
-				<Support
+				<IconLinkCard
 					icon={mdiGithub}
+					btnText="Contribute"
 					title="Contribute"
 					subtitle="Explore our open source repositories and projects."
 					link="https://github.com/StarlaneStudios"
 					classes={{
 						icon: {
-							wrapper: "bg-github",
+							wrapper: "bg-gradient-to-br from-starlane-primary to-starlane-secondary",
 						}
 					}}
 				/>

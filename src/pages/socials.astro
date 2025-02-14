@@ -1,0 +1,94 @@
+---
+import SectionHeading from "../components/basics/SectionHeading.astro";
+import IconLinkCard from "../components/cards/IconLinkCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { socialBluesky, socialDiscord, socialGithub, socialTwitch, socialX, socialYoutube } from "../utils/icons";
+---
+
+<Layout>
+	<SectionHeading
+		title="Join Our Community"
+		subtitle="Explore the world of Starlane"
+	/>
+
+	<div class="grid grid-cols-3 gap-7 mt-15">
+		<IconLinkCard
+			icon={socialDiscord}
+			title="Discord"
+			subtitle="Join our vibrant Discord community and chat away across multiple channels."
+			btnText="Join Our Discord"
+			link="https://discord.gg/exaQDX2"
+			classes={{
+				icon: {
+					wrapper:
+						"bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+				},
+			}}
+		/>
+		<IconLinkCard
+			icon={socialGithub}
+			title="GitHub"
+			subtitle="Explore our open source GitHub projects and feel free to contribute!"
+			btnText="Visit Our GitHub"
+			link="https://github.com/StarlaneStudios"
+			classes={{
+				icon: {
+					wrapper:
+						"bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+				},
+			}}
+		/>
+		<IconLinkCard
+			icon={socialBluesky}
+			title="Bluesky"
+			subtitle="Visit our Bluesky for updates, announcements, and other posts."
+			btnText="Follow us on Bluesky"
+			link="https://bsky.app/profile/starlane.studio"
+			classes={{
+				icon: {
+					wrapper:
+						"bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+				},
+			}}
+		/>
+		<IconLinkCard
+			icon={socialYoutube}
+			title="YouTube"
+			subtitle="Watch our tutorials, product releases, live streams, and other content."
+			btnText="Subscribe on YouTube"
+			link="https://youtube.com/@StarlaneStudios"
+			classes={{
+				icon: {
+					wrapper:
+						"bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+				},
+			}}
+		/>
+		<IconLinkCard
+			icon={socialTwitch}
+			title="Twitch"
+			subtitle="Tune into our live events and other streams on our Twitch channel."
+			btnText="Watch on Twitch"
+			link="https://twitch.tv/StarlaneStudios"
+			classes={{
+				icon: {
+					wrapper:
+						"bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+				},
+			}}
+		/>
+		<IconLinkCard
+			icon={socialX}
+			title="X"
+			subtitle="Stay up to date with our latest updates, announcements, and other posts."
+			btnText="Follow us on X"
+			link="https://x.com/StarlaneStudios"
+			classes={{
+				icon: {
+					wrapper:
+						"bg-gradient-to-br from-starlane-primary to-starlane-secondary",
+				},
+			}}
+		/>
+	</div>
+</Layout>
