@@ -12,6 +12,8 @@ As some of you may know, we have been working hard on building our own task plan
 
 Before we jump into the latest development updates, I'll give a quick rundown of the architecture powering Vindigo, the software we use, and some of the more important decisions we have made.
 
+<br />
+
 # The architecture
 
 One of our main goals for Vindigo is to create a clean and maintainable codebase to future proof us in the long run. Since the goals and ambitions of a project change over time, we too have had many situations where substantial parts of the codebase have undergone refactoring.
@@ -19,6 +21,8 @@ One of our main goals for Vindigo is to create a clean and maintainable codebase
 At the current moment in time, we are extremely satisfied with the software and feel that it is a great fit for the project. Vindigo uses a variety of different libraries, frameworks, and techniques behind the scenes, so here is a quick rundown of our most important setups and decisions behind them.
 
 The Vindigo repository is configured as a monorepo and contains all different packages essential to each Vindigo installation. This includes the Server, the Client, and the CLI, among other packages.
+
+<br />
 
 ## The Vindigo server
 
@@ -31,6 +35,8 @@ In order to manage and sync all actions from each client, the server consists of
 
 The server is operated from the [Vindigo CLI](https://www.npmjs.com/package/@vindigo/cli), a separate command line tool used to manage a Vindigo installation. The CLI provides easy means of starting Vindigo, both directly or as background process, performing updates, as well as setting up new Vindigo installations.
 
+<br />
+
 ## The Vindigo client
 
 <figure>
@@ -42,6 +48,7 @@ One of our main focuses on Vindigo was to provide a fast and efficient web exper
 
 In order to update the UI live, we use GraphQL subscriptions to listen to live events. This allows us to efficiently and instantly sync up clients in response to various actions, such as changing the summary of a task, or adding a user to a project. During development we use a fantastic tool named [Altair](https://altair.sirmuel.design/) to write and test our client GraphQL queries before integrating them into the codebase.
 
+<br />
 
 # The design process
 
@@ -56,16 +63,21 @@ Most mockups take at least two or three iterations before we consider them good 
 
 While the design process is not performed publicly at the moment, we have made sure to keep all mockups and every iteration of each. We might even reveal some in a future progress report!
 
+<br />
 
 # The current status of Vindigo
 
 Over the past months developing Vindigo, we already completed many of the tasks we set out to do. While it is still not recommended for production use, as many features are still missing, we have already completed most functionality we intend to include in Alpha, such as authentication, user profiles, global search, and of course the kanban boards.
+
+<br />
 
 ## Working towards Alpha
 
 While we are making huge strides towards Alpha, we still have a long way to go. That being said, we’re confident we’re approaching an initial alpha release in the somewhat near future if all things go as intended. As there are still many more features we would like to implement, we cannot give an exact date just yet.
 
 We still have a lot of work to do, especially in the area of tasks, including implementing remaining project task views, adding task hierarchy support, and streamlining the workflow. Naturally we will continue to address the latest developments in future progress reports :)
+
+<br />
 
 # Links
 
