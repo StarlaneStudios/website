@@ -16,7 +16,7 @@ import ColorPaletteSegment from "../components/brand/ColorPaletteSegment.astro";
 		subtitle="Represent Starlane Studios"
 	/>
 
-	<div class="grid grid-cols-2 gap-7 mt-15">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-7 mt-15">
 		<LogoDownload
 			title="Starlane Light Theme Logo"
 			logo={logoLight}
@@ -41,7 +41,7 @@ import ColorPaletteSegment from "../components/brand/ColorPaletteSegment.astro";
 		class="mt-30"
 	/>
 
-	<div class="grid grid-cols-3 gap-7 mt-15">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-15">
 		<ColorBlock
 			title="Nebula"
 			hex="#e25bff"
@@ -69,10 +69,6 @@ import ColorPaletteSegment from "../components/brand/ColorPaletteSegment.astro";
 				root: "bg-starlane-orange"
 			}}
 		/>
-	</div>
-	
-	<div class="grid grid-cols-3 gap-7 mt-7">
-		<div />
 		<GradientBlock
 			title="Galaxy"
 			from="#e25bff"
@@ -81,7 +77,6 @@ import ColorPaletteSegment from "../components/brand/ColorPaletteSegment.astro";
 				root: "bg-gradient-to-br from-starlane-primary to-starlane-secondary"
 			}}
 		/>
-		<div />
 	</div>
 <!-- 
 	
