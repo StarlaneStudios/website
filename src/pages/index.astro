@@ -52,7 +52,7 @@ import IconLinkCard from "../components/cards/IconLinkCard.astro";
 			subtitle="We build and craft software across many fields"
 		/>
 
-		<div class="grid grid-cols-3 gap-7 mt-15">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-15">
 			<Expertise
 				icon={mdiEarth}
 				title="Websites"
@@ -93,7 +93,6 @@ import IconLinkCard from "../components/cards/IconLinkCard.astro";
 
 			<div class="grid gap-7 mt-8">
 				<Project
-					reverse
 					name="Meltdown"
 					alt="Meltdown Game Image"
 					title="Critical Failure Detected!"
@@ -105,6 +104,7 @@ import IconLinkCard from "../components/cards/IconLinkCard.astro";
 					}}
 				/>
 				<Project
+					reverse
 					name="Comment Anchors"
 					alt="Comment Anchors Image"
 					title="VScode navigation anchors"
@@ -123,7 +123,7 @@ import IconLinkCard from "../components/cards/IconLinkCard.astro";
 				subtitle="So we can keep producting awesome stuff"
 			/>
 	
-			<div class="grid grid-cols-3 gap-7 mt-15">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-15">
 				<IconLinkCard
 					icon={mdiPatreon}
 					btnText="Support Us"

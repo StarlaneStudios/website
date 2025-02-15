@@ -35,8 +35,8 @@ const {
 	...rest
 } = Astro.props;
 ---
-<div class="grid grid-cols-2 gap-7 mt-8" {...rest}>
-	<div style={{ order: reverse ? 1 : undefined }}>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-7 mt-8" {...rest}>
+	<div class={tm("order-1", reverse && "sm:order-0")}>
 		<h2 class={tm("my-2 font-bold", classes?.name)}>{name}</h2>
 		<h1 class={tm("font-bold text-[26px] text-deepblue-7 dark:text-gravel-1", classes?.title)}>{title}</h1>
 		<p class={tm("mt-2 text-[14px]", classes?.description)}>{description}</p>
