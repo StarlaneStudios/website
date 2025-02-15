@@ -6,9 +6,20 @@ import FooterLink from './FooterLink.astro';
 ---
 
 <div class="w-full bg-light-1 dark:bg-dark-8">
-	<div class="grid min-h-[20rem] w-full mt-50 justify-center">
-		<div class="grid grid-cols-6 py-10 gap-[100px]">
-			<a class="col-span-3 w-[200px] my-auto" href="/">
+	<div class="grid min-h-[20rem] w-full mt-50 lg:justify-center">
+		<a class="col-span-1 w-[200px] mt-10 mx-auto lg:hidden" href="/">
+			<Image
+				class="block w-[200px]"
+				alt="Starlane Studios Logo"
+				src={{
+					light: lightLogoSvg,
+					dark: darkLogoSvg
+				}}
+			/>
+		</a>
+
+		<div class="grid grid-cols-3 lg:grid-cols-6 py-10 mx-5 lg:gap-[100px]">
+			<a class="col-span-3 w-[200px] my-auto hidden lg:block" href="/">
 				<Image
 					class="block w-[200px]"
 					alt="Starlane Studios Logo"
@@ -18,31 +29,6 @@ import FooterLink from './FooterLink.astro';
 					}}
 				/>
 			</a>
-	
-			<div class="grid grid-rows-8 gap-1 content-stretch col-span-1">
-				<h1 class="text-deepblue-7 dark:text-gravel-0 font-bold">Projects</h1>
-				<FooterLink
-					link="https://starlane-studios.itch.io/asteroids"
-					label="Asteroids"
-				/>
-				<FooterLink
-					link="https://github.com/StarlaneStudios/cirql"
-					label="Cirql"
-				/>
-				<FooterLink
-					link="https://github.com/StarlaneStudios/vscode-comment-anchors"
-					label="Comment Anchors"
-				/>
-				<FooterLink
-					link="https://starlane-studios.itch.io/meltdown"
-					label="Meltdown"
-				/>
-				<FooterLink
-					link="https://github.com/StarlaneStudios/sceptre"
-					label="Sceptre"
-				/>
-			</div>
-	
 			<div class="grid grid-rows-8 gap-1 content-stretch">
 				<h1 class="text-deepblue-7 dark:text-gravel-0 font-bold">Community</h1>
 
@@ -73,6 +59,30 @@ import FooterLink from './FooterLink.astro';
 				<FooterLink
 					link="https://youtube.com/@StarlaneStudios"
 					label="YouTube"
+				/>
+			</div>
+
+			<div class="grid grid-rows-8 gap-1 content-stretch col-span-1">
+				<h1 class="text-deepblue-7 dark:text-gravel-0 font-bold">Projects</h1>
+				<FooterLink
+					link="https://starlane-studios.itch.io/asteroids"
+					label="Asteroids"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios/cirql"
+					label="Cirql"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios/vscode-comment-anchors"
+					label="Comment Anchors"
+				/>
+				<FooterLink
+					link="https://starlane-studios.itch.io/meltdown"
+					label="Meltdown"
+				/>
+				<FooterLink
+					link="https://github.com/StarlaneStudios/sceptre"
+					label="Sceptre"
 				/>
 			</div>
 	

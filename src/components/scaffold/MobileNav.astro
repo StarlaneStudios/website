@@ -1,0 +1,71 @@
+---
+import Image from "../basics/Image.astro";
+import Spacer from "../basics/Spacer.astro";
+import NavButton from "./NavButton.astro";
+import Icon from "../basics/Icon.astro";
+import darkLogoSvg from "../../assets/starlane-logo-dark.svg";
+import lightLogoSvg from "../../assets/starlane-logo-light.svg";
+
+import { mdiClose, mdiMenu } from "@mdi/js";
+---
+<div id="drawer" class="fixed inset-0 z-50 bg-white dark:bg-dark-9 transform transition-transform duration-300 ease-in-out translate-x-full">
+	<div class="p-7 mb-[70px] flex">
+		<Spacer />
+
+		<a href="/">
+			<Image
+				class="block w-[185px]"
+				alt="Starlane Studios Logo"
+				src={{
+					dark: darkLogoSvg,
+					light: lightLogoSvg,
+				}}
+			/>
+		</a>
+
+		<Spacer />
+
+		<button id="mobile-nav-close" class="visible md:hidden cursor-pointer">
+			<Icon path={mdiClose} size={1} />
+		</button>
+		
+	</div>
+
+	
+	<div class="flex flex-col gap-7 mx-10">
+		<NavButton link="/">Home</NavButton>
+		<NavButton link="/blogs">Blogs</NavButton>
+		<NavButton link="/projects">Projects</NavButton>
+		<NavButton link="/about">About Us</NavButton>
+		<NavButton link="/socials">Socials</NavButton>
+	</div>
+</div>
+
+<script>
+	const drawer = document.getElementById("drawer");
+	const drawerToggle = document.getElementById("mobile-nav-toggle");
+	const drawerClose = document.getElementById("mobile-nav-close");
+
+	const status = drawer?.classList.contains("hidden");
+
+	function openDrawer() {
+		drawer?.classList.remove("translate-x-full");
+		drawer?.classList.add("translate-x-0");
+	}
+
+	function closeDrawer() {
+		drawer?.classList.remove("translate-x-0");
+		drawer?.classList.add("translate-x-full");
+	}
+
+	function toggleDrawer() {
+		if (status) {
+			closeDrawer();
+		} else {
+			openDrawer();
+		}
+	}
+
+	drawerToggle?.addEventListener("click", toggleDrawer);
+	drawerClose?.addEventListener("click", closeDrawer);
+</script>

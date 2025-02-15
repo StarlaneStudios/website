@@ -3,6 +3,7 @@ import Header from "../components/scaffold/Header.astro";
 import Footer from "../components/scaffold/Footer.astro";
 
 import "../styles/global.css";
+import MobileNav from "../components/scaffold/MobileNav.astro";
 
 interface Props {
 	title?: string;
@@ -39,11 +40,14 @@ const title = Astro.props.title ? `${Astro.props.title} - Starlane Studios` : "S
 	</head>
 
 	<body class="m-0 w-full h-full text-gravel-6 dark:text-gravel-2 bg-light-0 dark:bg-dark-9">
-		<div class="main-container mx-auto" style="min-height: calc(100vh - 12rem);">
-			<Header />
-			<slot />
+		<div id="site-content">
+			<div class="main-container mx-auto" style="min-height: calc(100vh - 12rem);">
+				<Header />
+				<slot />
+			</div>
+	
+			<Footer />
+			<MobileNav />
 		</div>
-		
-		<Footer />
 	</body>
 </html>

@@ -1,6 +1,9 @@
 ---
+import { mdiMenu } from "@mdi/js";
+
 import darkLogoSvg from "../../assets/starlane-logo-dark.svg";
 import lightLogoSvg from "../../assets/starlane-logo-light.svg";
+import Icon from "../basics/Icon.astro";
 import Image from "../basics/Image.astro";
 import Spacer from "../basics/Spacer.astro";
 import NavButton from "./NavButton.astro";
@@ -13,28 +16,22 @@ import NavButton from "./NavButton.astro";
 			alt="Starlane Studios Logo"
 			src={{
 				dark: darkLogoSvg,
-				light: lightLogoSvg
+				light: lightLogoSvg,
 			}}
 		/>
 	</a>
 
 	<Spacer />
 
-	<div class="flex gap-7">
-		<NavButton link="/">
-			Home
-		</NavButton>
-		<NavButton link="/blogs">
-			Blogs
-		</NavButton>
-		<NavButton link="/projects">
-			Projects
-		</NavButton>
-		<NavButton link="/about">
-			About Us
-		</NavButton>
-		<NavButton link="/socials">
-			Socials
-		</NavButton>
+	<button id="mobile-nav-toggle" class="visible md:hidden cursor-pointer">
+		<Icon path={mdiMenu} size={1} />
+	</button>
+
+	<div class="gap-7 hidden md:flex md:visible">
+		<NavButton link="/">Home</NavButton>
+		<NavButton link="/blogs">Blogs</NavButton>
+		<NavButton link="/projects">Projects</NavButton>
+		<NavButton link="/about">About Us</NavButton>
+		<NavButton link="/socials">Socials</NavButton>
 	</div>
 </div>
