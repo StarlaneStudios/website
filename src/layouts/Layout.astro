@@ -4,12 +4,26 @@ import Footer from "../components/scaffold/Footer.astro";
 
 import "../styles/global.css";
 import MobileNav from "../components/scaffold/MobileNav.astro";
+import Sphere from "../components/scaffold/Sphere.astro";
 
 interface Props {
 	title?: string;
 }
 
 const title = Astro.props.title ? `${Astro.props.title} - Starlane Studios` : "Starlane Studios";
+
+const SPHERES = [
+	[-600, 180, 180],
+	[725, 120, 170],
+	[-800, 400, 120],
+	[600, 400, 100],
+	[880, 670, 360],
+	[-440, 670, 70],
+	[450, 870, 180],
+	[-680, 940, 130],
+	[780, 1140, 80],
+];
+
 ---
 
 <!DOCTYPE html>
@@ -44,6 +58,16 @@ const title = Astro.props.title ? `${Astro.props.title} - Starlane Studios` : "S
 			<div class="main-container mx-auto" style="min-height: calc(100vh - 12rem);">
 				<Header />
 				<slot />
+
+				<div class="fixed top-0 left-[50vw] -z-1">
+					{SPHERES.map(([x, y, size], i) => (
+						<Sphere
+							x={x}
+							y={y}
+							size={size}
+						/>
+					))}
+				</div>
 			</div>
 	
 			<Footer />

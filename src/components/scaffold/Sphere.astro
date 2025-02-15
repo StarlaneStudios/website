@@ -1,0 +1,36 @@
+---
+import lightSphereSvg from "../../assets/sphere-light.svg";
+import darkSphereSvg from "../../assets/sphere-dark.svg";
+import Image from "../basics/Image.astro";
+
+interface Props {
+	size: number;
+	x: number;
+	y: number;
+}
+
+const { size, x, y, ...rest } = Astro.props;
+---
+<img 
+	id="sphere"
+	alt="Background Sphere"
+	class="relative pointer-events-none"
+	style=`left: ${x - size / 2}px; top: ${y - size / 2}px;`
+	width={size}
+	height={size}
+	src={darkSphereSvg.src}
+	{...rest}
+/>
+
+<script>
+	const { size } = Astro.props;
+	const sphere = document.getElementById('sphere');
+
+	window.addEventListener('scroll', function () {
+		const offset = window.scrollY * size * 0.002;
+		
+		if (sphere) {
+			sphere.style.transform = `translateY(-${offset}px)`;
+		}
+	});
+</script>
