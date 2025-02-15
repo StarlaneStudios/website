@@ -26,7 +26,7 @@ const primaryCategory = BLOG_CATEGORIES.find(
 	(cat) => cat.value === post.data.categories[0],
 );
 ---
-<Layout>
+<Layout title={post.data.title}>
 	<div class="text-center">
 		<h2 class={tm("text-[20px] font-bold", primaryCategory?.color)}>
 			{primaryCategory?.label}

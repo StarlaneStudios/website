@@ -1,8 +1,47 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import ProjectCard from "../../components/docs/ProjectCard.astro";
+import cirqlIcon from "../../assets/img/docs/cirql/logo.svg";
+import transagoIcon from "../../assets/img/docs/transago/logo.svg";
+import Header from "../../components/scaffold/Header.astro";
 ---
 
-<Layout>
-	
-</Layout>
+<DocsLayout>
+	<div class="flex flex-grow justify-center">
+		<div class="main-container space-y-16">
+			<Header />
+
+			<div class="space-y-4 pt-8 pb-16 max-w-150">
+				<h1 class="text-3xl lg:text-4xl font-semibold leading-13 text-deepblue-7 dark:text-gravel-0">
+					Starlane Studios<br>
+					Documentation Platform
+				</h1>
+
+				<p class="text-md">
+					Welcome to the Starlane Studios Documentation Platform. Here you can find all the information you need to get started with our products and services.
+				</p>
+			</div>
+
+			<h1 class="text-xl lg:text-2xl mb-4 font-semibold text-deepblue-7 dark:text-gravel-0">Projects</h1>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+				<ProjectCard
+					link="/docs/cirql"
+					title="Cirql"
+					subtitle="SurrealDB ORM"
+					description="Cirql (pronounced Circle) is a simple and lightweight ORM and query builder for SurrealDB with built in model mapping and validation powered by Zod. Unlike most query builders, Cirql takes a very open approach, providing you with complete control over your queries."
+					logo={cirqlIcon}
+					alt="Cirql Logo"
+				/>
+				<ProjectCard
+					link="/docs/transago"
+					title="Transago"
+					subtitle="Bill Tracking Tool"
+					description="Transago is a bill tracking tool that helps you keep track of your bills and payments. It provides you with a simple and easy to use interface to manage your bills and payments."
+					logo={transagoIcon}
+					alt="Transago Logo"
+				/>
+			</div>
+		</div>
+	</div>
+</DocsLayout>
