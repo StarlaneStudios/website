@@ -1,10 +1,36 @@
-import { defineCollection, z } from "astro:content";
+import { BlogSchema, DocsSchema } from "./schemas";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
-import { BlogSchema } from "./schemas";
+import { docsProjects } from "./contants";
 
 export const blogs = defineCollection({
 	loader: glob({ pattern: "*.mdx", base: "./content/blogs" }),
 	schema: BlogSchema,
 });
 
-export const collections = { blogs };
+export const docs = defineCollection({
+	loader: glob({ pattern: "**/*.mdx", base: "./content/docs" }),
+	schema: DocsSchema,
+});
+
+export const docsCollections = {
+	...docsProjects.reduce<Docs>((prev, curr) => {
+		prev[curr as Doc] = docs;
+		return prev;
+	}, {} as Docs)
+};
+
+export const urlForCollection = {
+	...docsProjects.reduce<Record<Doc, Doc>>(
+		(prev, curr) => {
+			prev[curr as Doc] = curr;
+			return prev;
+		},
+		{} as Record<Doc, Doc>
+	)
+}
+
+export type Doc = (typeof docsProjects)[number];
+export type Docs = Record<Doc, typeof docs>;
+
+export const collections = { blogs, docs }; 

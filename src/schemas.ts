@@ -10,3 +10,10 @@ export const BlogSchema = z.object({
 	summary: z.string(),
 	categories: z.array(BlogCategoryTypeSchema)
 });
+
+export const DocsSchema = z.object({
+	sidebar_position: z.number(),
+	sidebar_label: z.string(),
+	title: z.string(),
+	description: z.string(),
+})

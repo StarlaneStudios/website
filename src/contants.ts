@@ -6,3 +6,8 @@ export const BLOG_CATEGORIES: BlogPostCategory[] = [
 	{ label: 'Dev Logs', value: 'devlogs', color: 'text-starlane-orange' },
 	{ label: 'Releases', value: 'releases', color: 'text-starlane-secondary' }
 ]
+
+export const docsProjects = [
+	'cirql',
+	'transago'
+]
