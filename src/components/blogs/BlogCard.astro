@@ -29,9 +29,9 @@ const primaryCategory = BLOG_CATEGORIES.find(
 );
 ---
 
-<a class="flex flex-row w-full p-4 bg-white transition-colors duration-200 dark:bg-dark-8 hover:bg-light-2 dark:hover:bg-dark-7 rounded-xl gap-5 shadow-md" href=`/blogs/${slug}` {...rest}>
+<a class="flex flex-col lg:flex-row w-full p-4 bg-white transition-colors duration-200 dark:bg-dark-8 hover:bg-light-2 dark:hover:bg-dark-7 rounded-xl gap-5 shadow-md" href=`/blogs/${slug}` {...rest}>
 	<img 
-		class="overflow-hidden shrink-0 object-cover rounded-xl my-auto w-90 h-50 rounded-bl-[50px] rounded-tr-[50px]"
+		class="overflow-hidden shrink-0 object-cover rounded-xl my-auto mx-auto w-90 h-50 rounded-bl-[50px] rounded-tr-[50px]"
 		alt={blog.data.title + " Blog Image"}
 		src={image}
 	/>
@@ -62,5 +62,5 @@ const primaryCategory = BLOG_CATEGORIES.find(
 		</p>
 	</div>
 	
-	<Icon path={mdiChevronRight} class="text-deepblue-7 dark:text-dark-0 my-auto shrink-0" size={2} />
+	<Icon path={mdiChevronRight} class="text-deepblue-7 dark:text-dark-0 my-auto shrink-0 hidden lg:block" size={2} />
 </a>
