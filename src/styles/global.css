@@ -88,6 +88,10 @@ img {
 
 .main-container {
     width: 100%;
+
+	@media (width < 41rem) {
+		@apply px-5;
+	}
     
 	@media (width >= 40rem) {
         max-width: 40rem;
