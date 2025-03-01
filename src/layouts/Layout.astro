@@ -9,9 +9,12 @@ import "../styles/global.css";
 
 interface Props {
 	title?: string;
+	description?: string;
+	image?: string;
 }
 
 const title = Astro.props.title ? `${Astro.props.title} - Starlane Studios` : "Starlane Studios";
+const { description, image } = Astro.props;
 
 const SPHERES = [
 	[-600, 180, 180],
@@ -25,7 +28,7 @@ const SPHERES = [
 	[780, -100, 100],
 ];
 ---
-<BasePage title={title}>
+<BasePage title={title} description={description} image={image}>
 	<div class="main-container mx-auto" style="min-height: calc(100vh - 12rem);">
 		<Header />
 		<slot />

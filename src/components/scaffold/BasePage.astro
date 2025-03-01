@@ -1,36 +1,43 @@
 ---
 interface Props {
 	title?: string;
+	description?: string;
+	image?: string;
 }
 
-const { title } = Astro.props;
+const { title, image, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.ico" />
+		
+		<meta name="referrer" content="origin-when-cross-origin">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#26205C" />
-		<meta name="description" content="We are group of passionate developers, artists and gamers who strive to create high quality games and software for all to enjoy." />
+		<meta name="theme-color" content="#6155c2" />
+		<meta name="description" content={description ?? "We are group of passionate developers, artists and gamers who strive to create high quality games and software for all to enjoy."} />
 
+		<link rel="icon" href="/favicon.ico" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
 
-		<title>{title}</title>
+		<title>{title ?? "Starlane Studios"}</title>
 
-		<meta name="description" content="Starlane Studios" />
-		<meta name="twitter:card" content="content" />
-		<meta name="twitter:title" content="Starlane Studios" />
-		<meta name="twitter:image" content="/favicon.ico" />
-		<meta name="og:title" content="Starlane Studios" />
-		<meta name="og:type" content="website" />
-		<meta name="og:image" content="/favicon.ico" />
+		<meta name="twitter:title" property="twitter:title" content={title ?? "Starlane Studios"} />
+		<meta name="twitter:site" property="twitter:site" content="@StarlaneStudios" />
+		<meta name="twitter:domain" property="twitter:domain" content="starlane.studio" />
+		<meta name="twitter:description" property="twitter:description" content={description ?? "We are group of passionate developers, artists and gamers who strive to create high quality games and software for all to enjoy."} />
+		<meta name="twitter:image" property="twitter:image" content={image ?? "/img/banner.png"} />
+		<meta name="twitter:image:src" property="twitter:image:src" content={image ?? "/img/banner.png"} />
+		<meta name="twitter:image:alt" property="twitter:image:alt" content={description ?? "We are group of passionate developers, artists and gamers who strive to create high quality games and software for all to enjoy."} />
+		<meta name="twitter:card" property="twitter:card" content="summary_large_image" />
 
-		<meta content="Starlane Studios" name="og:site_name" property="og:site_name" />
-		<meta content="@StarlaneStudios" name="twitter:site" property="twitter:site" />
-		<meta content="starlane.studio" name="twitter:domain" property="twitter:domain" />
+		<meta name="og:site_name" property="og:site_name" content="Starlane Studios" />
+		<meta name="og:title" property="og:title" content={title ?? "Starlane Studios"} />
+		<meta name="og:type" property="og:type" content="website" />
+		<meta name="og:image" property="og:image" content={image ?? "/img/banner.png"} />
+		<meta name="og:description" property="og:description" content={description ?? "We are group of passionate developers, artists and gamers who strive to create high quality games and software for all to enjoy."} />
 	</head>
 	
 	<body class="m-0 w-full h-full text-gravel-6 dark:text-gravel-2 bg-light-0 dark:bg-dark-9">

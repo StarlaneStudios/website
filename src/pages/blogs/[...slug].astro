@@ -24,7 +24,7 @@ const { Content } = await render(post);
 const image = `/img/blogs/${post.id}.png`;
 const primaryCategory = BLOG_CATEGORIES.find((cat) => cat.value === post.data.categories[0]);
 ---
-<Layout title={post.data.title}>
+<Layout title={post.data.title} description={post.data.summary} image={image}>
 	<div class="text-center">
 		<h2 class={tm("text-[20px] font-bold", primaryCategory?.color)}>
 			{primaryCategory?.label}
