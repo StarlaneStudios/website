@@ -3,6 +3,8 @@ import darkLogoSvg from '../../assets/starlane-logo-dark.svg';
 import lightLogoSvg from '../../assets/starlane-logo-light.svg';
 import Image from '../basics/Image.astro';
 import FooterLink from './FooterLink.astro';
+
+const year = new Date().getFullYear();
 ---
 
 <div class="w-full bg-light-1 dark:bg-dark-8">
@@ -108,7 +110,7 @@ import FooterLink from './FooterLink.astro';
 		<hr class="w-full border-t border-light-3 dark:border-dark-7" />
 
 		<p class="text-center light:text-gravel-6 dark:text-gravel-0 py-5">
-			© 2025 Starlane Studios • All rights reserved
+			© {year} Starlane Studios • All rights reserved
 		</p>
 	</div>
 </div>

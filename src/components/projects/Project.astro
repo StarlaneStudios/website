@@ -12,6 +12,8 @@ interface Props {
 	image: ImageMetadata;
 	alt: string;
 	link?: string;
+	disabled?: boolean;
+	btnText?: string;
 	classes?: {
 		title?: string;
 		subtitle?: string;
@@ -28,6 +30,8 @@ const {
 	image,
 	alt,
 	link,
+	btnText,
+	disabled,
 	classes,
 	...rest
 } = Astro.props;
@@ -42,8 +46,8 @@ const {
 
 		<Spacer />
 	
-		<Button size="md" class="mt-6 py-[8px] w-full" link={link}>
-			LEARN MORE
+		<Button size="md" class="mt-6 py-[8px] w-full" link={link} disabled={disabled}>
+			{btnText ?? "Learn More"}
 		</Button>
 	</div>
 </div>

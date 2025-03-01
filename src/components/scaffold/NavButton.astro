@@ -17,7 +17,7 @@ const isActive = path === link || (path.startsWith(link) && link.length > 1);
 
 <a
 	href={link}
-	class={tm("my-auto transition-opacity duration-200 dark:hover:opacity-80 focus:text-deepblue-4 font-semibold", className, (isActive ? 'text-deepblue-7 dark:text-deepblue-3' : 'text-gravel-3 dark:text-white'))}
+	class={tm("my-auto text-md transition-opacity duration-200 dark:hover:opacity-80 focus:text-deepblue-4 font-semibold", className, (isActive ? 'text-deepblue-7 dark:text-deepblue-3' : 'text-gravel-3 dark:text-white'))}
 	{...rest}
 >
 	<slot />

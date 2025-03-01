@@ -1,8 +1,4 @@
 ---
-import lightSphereSvg from "../../assets/sphere-light.svg";
-import darkSphereSvg from "../../assets/sphere-dark.svg";
-import Image from "../basics/Image.astro";
-
 interface Props {
 	size: number;
 	x: number;
@@ -12,25 +8,28 @@ interface Props {
 const { size, x, y, ...rest } = Astro.props;
 ---
 <img 
-	id="sphere"
+	id=`sphere-${x}-${y}`
 	alt="Background Sphere"
-	class="relative pointer-events-none"
+	class="sphere relative pointer-events-none"
 	style=`left: ${x - size / 2}px; top: ${y - size / 2}px;`
 	width={size}
 	height={size}
-	src={darkSphereSvg.src}
+	data-size={size}
 	{...rest}
 />
 
 <script>
-	const { size } = Astro.props;
-	const sphere = document.getElementById('sphere');
+	const spheres = document.querySelectorAll('[id^="sphere-"]');
 
 	window.addEventListener('scroll', function () {
-		const offset = window.scrollY * size * 0.002;
-		
-		if (sphere) {
-			sphere.style.transform = `translateY(-${offset}px)`;
-		}
+		spheres.forEach(s => {
+			const sphere = s as HTMLElement;
+			const size = sphere ? parseInt(sphere.getAttribute('data-size') || '100', 10) : 100;
+			const offset = window.scrollY * size * 0.002;
+			
+			if (sphere) {
+				sphere.style.transform = `translateY(-${offset}px)`;
+			}
+		})
 	});
 </script>

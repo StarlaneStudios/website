@@ -146,3 +146,14 @@ img {
 .btn-outline {
 	border-width: 3px;
 }
+@media (prefers-color-scheme: dark) {
+	.sphere {
+		content:url('/assets/sphere-dark.svg');
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.sphere {
+		content:url('/assets/sphere-light.svg');
+	}
+}

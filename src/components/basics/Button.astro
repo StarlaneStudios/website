@@ -23,13 +23,24 @@ interface Props extends HTMLAttributes<'button'> {
 	variant?: Variant;
 	size?: Size;
 	link?: string;
+	disabled?: boolean;
 }
 
-const { size, variant, class: className, onclick: clickEvent, link, ...rest } = Astro.props;
+const { size, variant, disabled, class: className, onclick: clickEvent, link, ...rest } = Astro.props;
 const target = link?.startsWith('http') ? '_blank' : '_self';
 const action = target === '_blank' ? `window.open('${link}', '_blank')` : `window.location.href='${link}'`;
 ---
 
-<button class={tm("tracking-[1px] rounded-full font-semibold uppercase cursor-pointer select-none align-middle", VARIANTS[variant ?? "solid"], SIZES[size ?? "md"], className)} onclick={link ? action : (clickEvent ?? undefined)} {...rest}>
+<button 
+	class={
+		tm("tracking-[1px] rounded-full font-semibold uppercase cursor-pointer select-none align-middle", 
+		VARIANTS[variant ?? "solid"], 
+		SIZES[size ?? "md"], 
+		className, 
+		disabled ? "bg-gravel-2 focus:bg-gravel-2 hover:bg-gravel-2 dark:bg-gravel-7 cursor-not-allowed hover:dark:bg-gravel-7 dark:focus:bg-gravel-7" : "")
+	} 
+	onclick={(!disabled) ? link ? action : (clickEvent ?? undefined) : undefined} 
+	{...rest}
+>
 	<slot />
 </button>
