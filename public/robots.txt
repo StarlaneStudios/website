@@ -1,0 +1,4 @@
+# http://www.robotstxt.org
+Sitemap: https://starlane.studio/sitemap-index.xml
+User-agent: *
+Disallow:
