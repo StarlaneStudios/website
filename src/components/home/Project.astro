@@ -1,9 +1,9 @@
 ---
-import { tm } from "../../utils/tailwind";
 import { mdiArrowRight } from "@mdi/js";
+import { tm } from "../../utils/tailwind";
 
-import Icon from "../basics/Icon.astro";
 import Button from "../basics/Button.astro";
+import Icon from "../basics/Icon.astro";
 import Image from "../basics/Image.astro";
 
 interface Props {
@@ -20,20 +20,10 @@ interface Props {
 		description?: string;
 		image?: string;
 		button?: string;
-	}
+	};
 }
 
-const {
-	reverse,
-	name,
-	title,
-	description,
-	image,
-	alt,
-	link,
-	classes,
-	...rest
-} = Astro.props;
+const { reverse, name, title, description, image, alt, link, classes, ...rest } = Astro.props;
 ---
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-7 mt-8" {...rest}>
 	<div class={tm("order-1", reverse && "sm:order-0")}>

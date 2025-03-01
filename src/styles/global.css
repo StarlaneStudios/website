@@ -32,7 +32,7 @@
 	--color-slate-6: #39393c;
 	--color-slate-7: #2b2b2f;
 	--color-slate-8: #222226;
-	--color-slate-9: #19191D;
+	--color-slate-9: #19191d;
 
 	--color-deepblue-0: #edebff;
 	--color-deepblue-1: #cac6ed;
@@ -48,7 +48,7 @@
 	--color-gravel-0: #f0f0fd;
 	--color-gravel-1: #d5d5e1;
 	--color-gravel-2: #b8bac7;
-	--color-gravel-3: #9496A9;
+	--color-gravel-3: #9496a9;
 	--color-gravel-4: #808298;
 	--color-gravel-5: #66697e;
 	--color-gravel-6: #505163;
@@ -64,7 +64,11 @@
 	--color-starlane-secondary: #347cf5;
 	--color-starlane-orange: #ffb22b;
 
-	--starlane-gradient: linear-gradient(45deg, var(--color-starlane-primary), var(--color-starlane-secondary));
+	--starlane-gradient: linear-gradient(
+		45deg,
+		var(--color-starlane-primary),
+		var(--color-starlane-secondary)
+	);
 
 	--font-size-xs: 12rem;
 	--font-size-sm: 13rem;
@@ -79,7 +83,6 @@ html {
 
 img {
 	-webkit-user-drag: none;
-	-khtml-user-drag: none;
 	-moz-user-drag: none;
 	-o-user-drag: none;
 	user-select: none;
@@ -88,26 +91,26 @@ img {
 
 .main-container {
 	@apply px-5;
-    width: 100%;
-    
+	width: 100%;
+
 	@media (width >= 40rem) {
-        max-width: 40rem;
-    }
-    
+		max-width: 40rem;
+	}
+
 	@media (width >= 48rem) {
-        max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-        max-width: 64rem;
-    }
-    @media (width >= 70rem) {
-        max-width: 70rem;
-    }
+		max-width: 48rem;
+	}
+	@media (width >= 64rem) {
+		max-width: 64rem;
+	}
+	@media (width >= 70rem) {
+		max-width: 70rem;
+	}
 }
 
 .text-gradient {
-	background-clip: text; 
-	-webkit-background-clip: text; 
+	background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
@@ -148,12 +151,12 @@ img {
 }
 @media (prefers-color-scheme: dark) {
 	.sphere {
-		content:url('/assets/sphere-dark.svg');
+		content: url("/assets/sphere-dark.svg");
 	}
 }
 
 @media (prefers-color-scheme: light) {
 	.sphere {
-		content:url('/assets/sphere-light.svg');
+		content: url("/assets/sphere-light.svg");
 	}
 }

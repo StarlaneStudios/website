@@ -20,21 +20,10 @@ interface Props {
 		role?: string;
 		bio?: string;
 		image?: string;
-	}
+	};
 }
 
-const {
-	name,
-	role,
-	bio,
-	linkedIn,
-	email,
-	location,
-	image,
-	alt,
-	classes,
-	...rest
-} = Astro.props;
+const { name, role, bio, linkedIn, email, location, image, alt, classes, ...rest } = Astro.props;
 ---
 <div class="flex flex-col bg-white dark:bg-dark-8 rounded-xl shadow-md" {...rest}>
 	<div class="relative">

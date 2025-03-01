@@ -1,5 +1,5 @@
 ---
-import { tm } from '../../utils/tailwind';
+import { tm } from "../../utils/tailwind";
 
 interface Props {
 	title: string;
@@ -12,16 +12,10 @@ interface Props {
 		text?: string;
 		from?: string;
 		to?: string;
-	}
+	};
 }
 
-const {
-	title,
-	from,
-	to,
-	classes,
-	...rest
-} = Astro.props;
+const { title, from, to, classes, ...rest } = Astro.props;
 ---
 <div class={tm(`flex flex-col w-full rounded-xl shadow-md`, classes?.root)} {...rest}>
 	<div class={tm("flex flex-col p-5 gap-1", classes?.textWrapper)}>

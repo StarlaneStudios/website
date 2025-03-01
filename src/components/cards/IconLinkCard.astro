@@ -1,10 +1,10 @@
 ---
-import { tm } from '../../utils/tailwind';
-import { mdiArrowRight } from '@mdi/js';
+import { mdiArrowRight } from "@mdi/js";
+import { tm } from "../../utils/tailwind";
 
-import Button from '../basics/Button.astro';
-import Icon from '../basics/Icon.astro';
-import Spacer from '../basics/Spacer.astro';
+import Button from "../basics/Button.astro";
+import Icon from "../basics/Icon.astro";
+import Spacer from "../basics/Spacer.astro";
 
 interface Props {
 	icon: string;
@@ -21,10 +21,20 @@ interface Props {
 		};
 		title?: string;
 		subtitle?: string;
-	}
+	};
 }
 
-const { icon, btnText, title, subtitle, color, link, class: className, classes, ...rest } = Astro.props;
+const {
+	icon,
+	btnText,
+	title,
+	subtitle,
+	color,
+	link,
+	class: className,
+	classes,
+	...rest
+} = Astro.props;
 ---
 
 <div class={tm("flex flex-col flex-1 bg-white dark:bg-dark-8 align-middle text-center rounded-xl p-6 shadow-md", className)} {...rest}>

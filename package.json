@@ -9,8 +9,8 @@
 		"astro": "astro",
 		"sync": "astro sync",
 		"quality:check": "biome check .",
-		"quality:apply": "biome check . --apply",
-		"quality:apply:unsafe": "biome check . --apply-unsafe"
+		"quality:apply": "biome check . --write",
+		"quality:apply:unsafe": "biome check . --write-unsafe"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.0.8",

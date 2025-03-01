@@ -28,11 +28,11 @@ const getIconSize = (size: IconProps["size"]) => {
 	if (size === undefined) {
 		return 1;
 	}
-	
+
 	if (typeof size === "number") {
 		return size;
 	}
-	
+
 	return FONT_SIZES[size] || 1;
 };
 ---

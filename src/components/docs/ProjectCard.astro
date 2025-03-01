@@ -1,8 +1,6 @@
 ---
-import { mdiDownload } from "@mdi/js";
 import { tm } from "../../utils/tailwind";
 
-import Icon from "../basics/Icon.astro";
 import Image from "../basics/Image.astro";
 
 interface Props {
@@ -18,19 +16,10 @@ interface Props {
 		subtitle?: string;
 		description?: string;
 		logo?: string;
-	}
+	};
 }
 
-const {
-	title,
-	subtitle,
-	description,
-	logo,
-	alt,
-	link,
-	classes,
-	...rest
-} = Astro.props;
+const { title, subtitle, description, logo, alt, link, classes, ...rest } = Astro.props;
 ---
 <a class={tm("bg-white dark:bg-dark-8 transition-colors duration-200 hover:bg-light-2 dark:hover:bg-dark-7 flex flex-col flex-1 p-5 gap-1 rounded-xl cursor-pointer shadow-md", classes?.root)} href={link} {...rest}>
 	<div class="flex flex-row gap-4">

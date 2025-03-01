@@ -1,6 +1,6 @@
 ---
-import { tm } from '../../utils/tailwind';
-import Icon from '../basics/Icon.astro';
+import { tm } from "../../utils/tailwind";
+import Icon from "../basics/Icon.astro";
 
 interface Props {
 	icon: string;
@@ -15,11 +15,10 @@ interface Props {
 		};
 		title?: string;
 		subtitle?: string;
-	}
+	};
 }
 
 const { icon, title, subtitle, color, class: className, classes, ...rest } = Astro.props;
-
 ---
 
 <div class={tm("flex flex-col bg-white dark:bg-dark-8 align-middle text-center rounded-xl p-6 shadow-md", className)} {...rest}>

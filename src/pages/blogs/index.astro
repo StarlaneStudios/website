@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
 import dayjs from "dayjs";
-import BlogCard from "../../components/blogs/BlogCard.astro";
 import SectionHeading from "../../components/basics/SectionHeading.astro";
+import BlogCard from "../../components/blogs/BlogCard.astro";
+import Layout from "../../layouts/Layout.astro";
 
 const posts = await getCollection("blogs");
 ---

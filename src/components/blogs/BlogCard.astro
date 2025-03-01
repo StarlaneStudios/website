@@ -1,11 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { mdiChevronRight } from "@mdi/js";
 import { BLOG_CATEGORIES } from "../../contants";
 import { tm } from "../../utils/tailwind";
-import { mdiChevronRight } from "@mdi/js";
 
-import Icon from "../basics/Icon.astro";
 import dayjs from "dayjs";
+import Icon from "../basics/Icon.astro";
 
 interface Props {
 	blog: CollectionEntry<"blogs">;
@@ -24,9 +24,7 @@ const { blog, classes, ...rest } = Astro.props;
 
 const image = `/img/blogs/${blog.id}.png`;
 const slug = blog.id.replace(/^\d{4}-\d{2}-\d{2}-/, "");
-const primaryCategory = BLOG_CATEGORIES.find(
-	(cat) => cat.value === blog.data.categories[0],
-);
+const primaryCategory = BLOG_CATEGORIES.find((cat) => cat.value === blog.data.categories[0]);
 ---
 
 <a class="flex flex-col lg:flex-row w-full p-4 bg-white transition-colors duration-200 dark:bg-dark-8 hover:bg-light-2 dark:hover:bg-dark-7 rounded-xl gap-5 shadow-md" href=`/blogs/${slug}` {...rest}>

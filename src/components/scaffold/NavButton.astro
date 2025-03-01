@@ -1,18 +1,15 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { tm } from '../../utils/tailwind';
+import type { HTMLAttributes } from "astro/types";
+import { tm } from "../../utils/tailwind";
 
-
-interface Props extends HTMLAttributes<'a'> {
+interface Props extends HTMLAttributes<"a"> {
 	link: string;
-	
 }
 
 const { link, class: className, ...rest } = Astro.props;
 
 const path = Astro.url.pathname;
 const isActive = path === link || (path.startsWith(link) && link.length > 1);
-
 ---
 
 <a
