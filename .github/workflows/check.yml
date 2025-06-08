@@ -1,12 +1,13 @@
-name: Publish Site
+name: Check Site
 
 on:
-  workflow_dispatch:
-
-permissions: write-all
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  check-and-package:
+  check:
     name: Package
     runs-on: ubuntu-latest
     steps:
@@ -24,17 +25,3 @@ jobs:
       - name: Check Quality
         run: |
           bun quality:check
-
-      - name: Upload
-        uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: ./dist
-
-  release:
-    name: Publish
-    runs-on: ubuntu-latest
-    needs:
-      - check-and-package
-    steps:
-      - name: Publish
-        uses: actions/deploy-pages@v4.0.5
