@@ -60,9 +60,11 @@
 	--color-paypal: #003087;
 	--color-github: #1b1f23;
 
-	--color-starlane-primary: #e25bff;
-	--color-starlane-secondary: #347cf5;
+	--color-starlane-primary: #d28aff;
+	--color-starlane-secondary: #6faef6;
 	--color-starlane-orange: #ffb22b;
+	--color-starlane-pink: #ff9cb9;
+	--color-starlane-green: #82ff9f;
 
 	--starlane-gradient: linear-gradient(
 		45deg,
