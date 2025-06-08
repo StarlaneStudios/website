@@ -1,20 +1,20 @@
 ---
-import type { GetStaticPaths } from 'astro';
-import { getEntry, render } from 'astro:content';
-import { docsProjects } from '../../../contants';
+import { getEntry, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import { docsProjects } from "../../../contants";
 
-import MarkdownContainer from '../../../components/basics/MarkdownContainer.astro';
-import DocsLayout from '../../../layouts/DocsLayout.astro';
+import MarkdownContainer from "../../../components/basics/MarkdownContainer.astro";
+import DocsLayout from "../../../layouts/DocsLayout.astro";
 
 export const getStaticPaths = (() => {
-    return docsProjects.map((doc) => ({ params: { doc } }));
+	return docsProjects.map((doc) => ({ params: { doc } }));
 }) satisfies GetStaticPaths;
 
 const { doc } = Astro.params;
-const entry = await getEntry('docs', doc);
+const entry = await getEntry("docs", doc);
 
 if (!entry) {
-    throw new Error(`Docs entry not found: ${doc}`);
+	throw new Error(`Docs entry not found: ${doc}`);
 }
 
 const { Content, headings } = await render(entry);

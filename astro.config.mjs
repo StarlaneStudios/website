@@ -7,12 +7,15 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://starlane.studio",
-	integrations: [mdx(), sitemap({
-		filter: (page) => {
-			// Remove docs temporarily since they're not finished
-			return !page.includes("/docs");
-		}
-	})],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => {
+				// Remove docs temporarily since they're not finished
+				return !page.includes("/docs");
+			},
+		}),
+	],
 	vite: {
 		plugins: [tailwindcss()],
 	},
