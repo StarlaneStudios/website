@@ -1,32 +1,17 @@
 ---
 import starlaneIcon from "../assets/starlane-icon.svg";
 import Founder from "../components/about/Founder.astro";
+import Member from "../components/about/Member.astro";
 import Image from "../components/basics/Image.astro";
 import SectionHeading from "../components/basics/SectionHeading.astro";
 import Layout from "../layouts/Layout.astro";
 
-import julian from "../assets/img/founders/julian.png";
-import matthew from "../assets/img/founders/matt.png";
-import thomas from "../assets/img/founders/thomas.png";
+import julian from "../assets/img/group/julian.png";
+import matthew from "../assets/img/group/matt.png";
+import thomas from "../assets/img/group/thomas.png";
 
-import beau from "../assets/img/contributors/beau.png";
-import bitheral from "../assets/img/contributors/bitheral.png";
-import brainfed from "../assets/img/contributors/brainfed.png";
-import densorius from "../assets/img/contributors/densorius.png";
-import eli from "../assets/img/contributors/eli.jpeg";
-import harpiart from "../assets/img/contributors/harpiart.png";
-import jackson from "../assets/img/contributors/jackson.png";
-import john from "../assets/img/contributors/john.jpg";
-import jordan from "../assets/img/contributors/jordan.png";
-import josh from "../assets/img/contributors/josh.png";
-import kablamme from "../assets/img/contributors/kablamme.png";
-import landon from "../assets/img/contributors/landon.jpg";
-import lnaf from "../assets/img/contributors/lnaf.png";
-import peb from "../assets/img/contributors/peb.png";
-import rex from "../assets/img/contributors/rex.png";
-import roy from "../assets/img/contributors/roy.png";
-import sadkur from "../assets/img/contributors/sadkur.png";
-import tjalp from "../assets/img/contributors/tjalp.jpg";
+import eli from "../assets/img/group/eli.jpeg";
+import jackson from "../assets/img/group/jackson.png";
 ---
 
 <Layout title="About Us">
@@ -79,140 +64,58 @@ import tjalp from "../assets/img/contributors/tjalp.jpg";
 	</div>
 
 	<SectionHeading
-		title="Meet the Founders"
-		subtitle="The people who started it all"
+		title="Meet our Group"
+		subtitle="The people actively working on Starlane projects"
 		class="my-13"
 	/>
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
 		<Founder
-			name="Julian Mills"
+			name="Julian"
 			alt="Image of Julian Mills"
-			role="Founder & Technical Lead"
-			bio="Passionate developer and designer who enjoys creating games and building creative solutions. Founder of the studio since 2018."
+			role="Founder & Lead Creative"
+			bio="Passionate developer and designer who enjoys creating games and building creative solutions. Leads all Starlane projects."
 			linkedIn="macjuul"
-			email="julian@starlane.org"
 			location="The Netherlands"
 			image={julian}
 		/>
 		<Founder
-			name="Matthew McFadden"
+			name="Matthew"
 			alt="Image of Matthew McFadden"
-			role="Co-Founder & Operations Lead"
-			bio="Currently in college majoring in ICT. Passionate software engineer and game developer. Keeps the studio running on a daily basis."
+			role="Co-Founder & Developer"
+			bio="Currently in college majoring in ICT and AI. Passionate software engineer and game developer. Handles studio operations."
 			linkedIn="mmcfad"
-			email="matthew@starlane.org"
 			location="Kentucky, USA"
 			image={matthew}
 		/>
 		<Founder
-			name="Thomas Buwick"
+			name="Thomas"
 			alt="Image of Thomas Buwick"
-			role="Co-Founder & Game Lead"
-			bio="Enjoys designing games, making art with Blender, and creating pixel-art on the side. Leads the studio's game projects."
+			role="Co-Founder & Planner"
+			bio="Enjoys designing games, making art with Blender, and creating pixel-art on the side. Handles project planning and concepts."
 			linkedIn="thomasbuwick"
-			email="thomas@starlane.org"
 			location="Illinois, USA"
 			image={thomas}
 		/>
 	</div>
-	
-	<SectionHeading
-		title="Contributors & Affiliates"
-		subtitle="The people who make Starlane Studios possible"
-		class="mt-25 mb-13"
-	/>
 
-	<div class="flex flex-row flex-wrap justify-center align-middle gap-4 max-w-[700px] mx-auto">
-		<Image
-			src={peb}
-			alt="Image of Peb"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={eli}
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-7 mt-7">
+		<Member
+			name="Eli"
 			alt="Image of Eli"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+			role="Music & SFX"
+			bio="A music producer and sound designer who enjoys creating music for games and other media."
+			location="Ohio, USA"
+			image={eli}
 		/>
-		<Image
-			src={landon}
-			alt="Image of Landon"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
+		<Member
+			name="Jackson"
+			alt="Image of Jackson Bean"
+			role="Game Development"
+			bio="Big beanus"
+			location="Virginia, USA"
+			image={jackson}
 		/>
-		<Image
-			src={kablamme}
-			alt="Image of Kablamme"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={jackson}
-			alt="Image of Jackson"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={jordan}
-			alt="Image of Jordan"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={john}
-			alt="Image of John"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={beau}
-			alt="Image of Beau"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={tjalp}
-			alt="Image of Tjalp"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={densorius}
-			alt="Image of Densorius"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={bitheral}
-			alt="Image of Bitheral"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={sadkur}
-			alt="Image of Sadkur"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={josh}
-			alt="Image of Josh"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={rex}
-			alt="Image of Rex"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={roy}
-			alt="Image of Roy"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={brainfed}
-			alt="Image of Brainfed"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={lnaf}
-			alt="Image of Lnaf"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
-		<Image
-			src={harpiart}
-			alt="Image of Harpiart"
-			class="w-[75px] h-[75px] rounded-xl overflow-hidden object-cover"
-		/>
+
 	</div>
 </Layout>

@@ -11,7 +11,6 @@ interface Props {
 	role: string;
 	bio: string;
 	linkedIn: string;
-	email: string;
 	location: string;
 	image: ImageMetadata;
 	alt: string;
@@ -23,7 +22,7 @@ interface Props {
 	};
 }
 
-const { name, role, bio, linkedIn, email, location, image, alt, classes, ...rest } = Astro.props;
+const { name, role, bio, linkedIn, location, image, alt, classes, ...rest } = Astro.props;
 ---
 <div class="flex flex-col bg-white dark:bg-dark-8 rounded-xl shadow-md" {...rest}>
 	<div class="relative">
@@ -56,16 +55,7 @@ const { name, role, bio, linkedIn, email, location, image, alt, classes, ...rest
 			/>
 			<a href=`https://www.linkedin.com/in/${linkedIn}` class="text-md align-middle text-deepblue-7 dark:text-gravel-0">@{linkedIn}</a>
 		</div>
-
-		<div class="flex items-center gap-3 my-auto mt-1 align-middle">
-			<Icon
-				path={mdiMail}
-				size={1}
-				class="text-deepblue-7 dark:text-gravel-0"
-			/>
-			<a href=`mailto:${email}` class="text-md align-middle text-deepblue-7 dark:text-gravel-0">{email}</a>
-		</div>
-
+		
 		<div class="flex items-center gap-3 my-auto mt-1 align-middle">
 			<Icon
 				path={mdiEarth}

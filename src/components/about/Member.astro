@@ -1,0 +1,38 @@
+---
+import { mdiEarth, mdiLinkedin, mdiMail } from "@mdi/js";
+import { tm } from "../../utils/tailwind";
+
+import Icon from "../basics/Icon.astro";
+import Image from "../basics/Image.astro";
+import Spacer from "../basics/Spacer.astro";
+
+interface Props {
+	name: string;
+	role: string;
+	bio: string;
+	location: string;
+	image: ImageMetadata;
+	alt: string;
+	classes?: {
+		name?: string;
+		role?: string;
+		bio?: string;
+		image?: string;
+	};
+}
+
+const { name, role, bio, location, image, alt, classes, ...rest } = Astro.props;
+---
+<div class="flex flex-col bg-white dark:bg-dark-8 rounded-xl shadow-md" {...rest}>
+	<div class="flex flex-col flex-1 p-5 rounded-b-xl">
+
+		<div class="flex items-center gap-5 my-auto">
+			<Image src={image} alt={alt} class={tm("overflow-hidden h-[75px] w-[75px] rounded-xl", classes?.image)} />
+
+			<div>
+				<h1 class={tm("font-bold text-[20px] text-deepblue-7 dark:text-gravel-1", classes?.name)}>{name}</h1>
+				<p class={tm("text-[14px] dark:text-gravel-4", classes?.role)}>{role}</p>
+			</div>
+		</div>
+	</div>
+</div>
