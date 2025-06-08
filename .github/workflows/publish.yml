@@ -26,13 +26,13 @@ jobs:
 
       - name: Check Quality
         run: |
-          bun qc
+          bun quality:check
 
       - name: Upload
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
-          
+
   release:
     name: Publish
     runs-on: ubuntu-latest
