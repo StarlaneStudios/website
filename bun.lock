@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "starlane-website-2025",
+      "name": "starlane-website",
       "dependencies": {
         "@astrojs/mdx": "^4.0.8",
         "@astrojs/sitemap": "^3.2.1",
